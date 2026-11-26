@@ -1,0 +1,14 @@
+﻿Feature,Role,Evidence_in_P1,Downstream_Use
+F01,First fundamental (carrier frequency),Significant after date adjustment (Holm p=0.021); tv lower than flat/mod,P2: absorption and geometric spreading; P4: source level
+F02,Second fundamental (two-voice structure),Definitional for tv; F02/F01 ~ 1.11; F02-F01 ~ 30 Hz beat,P2: two-voice robustness; P4: individual signature / beat frequency
+Fpeak,Peak frequency,"Naive Holm significant, but not robust to date adjustment; regime-dependent (fundamental vs 3rd harmonic)",P2: spectrogram and amplitude-spectrum correlation
+Q25,25th-percentile frequency,Not significant,P2: spectral envelope fidelity
+Q50,Median frequency,Weak; significance driven by recording date,P2: spectral envelope fidelity
+Q75,75th-percentile frequency,Not significant,P2: spectral envelope fidelity
+Duration,Call duration,Not significant,P2: envelope correlation; P3: exposure window
+PulseRate,Pulse rate (mod/tv only),mod vs tv not significant,P2: envelope correlation; P3: latency
+SpecBandwidth,Q75 - Q25,Redundant with quartiles,P2: spectral fidelity (descriptive)
+HarmonicRatio,Fpeak / F01,Bimodal mixture artifact; do not interpret as biology,Do not use as a biological harmonic ratio
+SpecSkew,Spectral skewness,Not significant,P2: spectral shape (descriptive)
+PeakAtFundamental,Fpeak/F01 < 1.5,Regime indicator; separates peak regimes,P2: spectral peak interpretation
+CallType,Categorical call type,Response factor,P3: playback response model

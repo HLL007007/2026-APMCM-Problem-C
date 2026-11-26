@@ -1,0 +1,4 @@
+﻿,Duration,F01,Fpeak,Q25,Q50,Q75,SpecBandwidth,HarmonicRatio,SpecSkew,PeakAtFundamental
+Class_flat,0.0,0.0,0.12782275077407584,0.0,0.0,0.0,0.0,0.0,0.0,-0.19012587032432876
+Class_mod,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Class_tv,0.0,-0.08982080894064837,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0

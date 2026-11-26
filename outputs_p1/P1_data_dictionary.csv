@@ -1,0 +1,18 @@
+﻿Column,Description,Unit_Type,Source
+Date,Recording date,string,Data01
+Location,Recording location,string,Data01
+CallType,flat / mod / tv,category,Data01
+Duration,Call duration,source units,Data01
+F01,First fundamental frequency,source units,Data01
+F02,Second fundamental frequency; tv only,source units,Data01
+Fpeak,Peak frequency,source units,Data01
+Q25,25th-percentile frequency,source units,Data01
+Q50,Median frequency,source units,Data01
+Q75,75th-percentile frequency,source units,Data01
+PulseRate,Pulse rate; flat structurally undefined,source units,Data01
+SpecBandwidth,Q75 - Q25,derived,P1.py
+HarmonicRatio,Fpeak / F01; bimodal mixture indicator,derived,P1.py
+SpecSkew,((Q75-Q50)-(Q50-Q25))/(Q75-Q25),derived,P1.py
+PeakAtFundamental,"1 if Fpeak/F01 < 1.5, else 0","binary, derived",P1.py
+F02_present,"1 if F02 measured, else 0; definitional for tv","binary, derived",P1.py
+PulseRate_present,"1 if PulseRate measured, else 0","binary, derived",P1.py

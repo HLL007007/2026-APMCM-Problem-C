@@ -1,0 +1,25 @@
+﻿Feature,CallType,N,N_valid,N_missing,Pct_missing,Structural_note
+Duration,flat,44,44,0,0.0,
+F01,flat,44,44,0,0.0,
+F02,flat,44,0,44,100.0,Structurally undefined (no second fundamental)
+Fpeak,flat,44,44,0,0.0,
+Q25,flat,44,44,0,0.0,
+Q50,flat,44,44,0,0.0,
+Q75,flat,44,44,0,0.0,
+PulseRate,flat,44,0,44,100.0,Structurally undefined (unmodulated call)
+Duration,mod,40,40,0,0.0,
+F01,mod,40,40,0,0.0,
+F02,mod,40,0,40,100.0,Structurally undefined (no second fundamental)
+Fpeak,mod,40,40,0,0.0,
+Q25,mod,40,40,0,0.0,
+Q50,mod,40,40,0,0.0,
+Q75,mod,40,40,0,0.0,
+PulseRate,mod,40,34,6,15.0,
+Duration,tv,24,24,0,0.0,
+F01,tv,24,24,0,0.0,
+F02,tv,24,24,0,0.0,
+Fpeak,tv,24,24,0,0.0,
+Q25,tv,24,24,0,0.0,
+Q50,tv,24,24,0,0.0,
+Q75,tv,24,24,0,0.0,
+PulseRate,tv,24,20,4,16.666666666666668,

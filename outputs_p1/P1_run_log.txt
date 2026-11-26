@@ -1,0 +1,194 @@
+[Data check] 11 official CSV files found; required columns present.
+[Data manifest] 16 files -> outputs_p1/P1_data_manifest.csv
+==============================================================================
+DATA SUMMARY
+==============================================================================
+Data01 analytic n = 108 (flat=44, mod=40, tv=24)
+Recording dates = 16, locations = 2
+Playback rows = 278; ResponseYesNo fixes = 0
+[Analysis dataset] 108 rows, 17 columns -> outputs_p1/P1_analysis_dataset.csv
+
+==============================================================================
+STEP 2: DESCRIPTIVE STATISTICS, MISSINGNESS AND COLLINEARITY
+==============================================================================
+
+[Collinearity] |rho|>=0.7 pairs = 4, VIF>10 features = 8, condition number = 6.3e+16
+          Feature    VIF
+         Duration   1.05
+              F01  10.30
+            Fpeak 185.27
+              Q25    inf
+              Q50  18.80
+              Q75    inf
+    SpecBandwidth    inf
+    HarmonicRatio 156.10
+         SpecSkew  13.37
+PeakAtFundamental   8.65
+
+==============================================================================
+STEP 3: NONPARAMETRIC TESTS (GLOBAL HOLM + DATE ADJUSTMENT)
+==============================================================================
+
+[Kruskal-Wallis: naive vs trimmed vs date-adjusted]
+      Feature  p_raw  p_trimmed  p_holm  p_date_adjusted  p_holm_date_adjusted
+     Duration 0.2832     0.2832  1.0000           0.3047                1.0000
+          F01 0.0103     0.0103  0.0827           0.0023                0.0210
+        Fpeak 0.0022     0.0002  0.0194           0.0190                0.1520
+          Q25 0.3400     0.3400  1.0000           0.4517                1.0000
+          Q50 0.0402     0.0402  0.2817           0.1837                1.0000
+          Q75 0.7712     0.7712  1.0000           0.2993                1.0000
+SpecBandwidth 0.6870     0.6870  1.0000           0.9693                1.0000
+HarmonicRatio 0.4301     0.7122  1.0000           0.2830                1.0000
+     SpecSkew 0.7079     0.8172  1.0000           0.0670                0.4690
+    PulseRate 0.2785        NaN  0.2785           0.1337                0.1337
+
+[Pairwise Mann-Whitney: surviving GLOBAL Holm, naive]
+Feature  Comparison  p_raw  p_holm_global  RankBiserial_r
+  Fpeak flat vs mod 0.0013         0.0346          0.4091
+
+[Pairwise Mann-Whitney: surviving GLOBAL Holm after date adjustment]
+Feature Comparison  p_date_adjusted  p_holm_date_global  RankBiserial_r
+    F01 flat vs tv           0.0015              0.0405          0.3968
+
+==============================================================================
+STEP 4: PERMANOVA / PERMDISP ON THE NON-REDUNDANT 6D SPACE
+==============================================================================
+
+[PERMANOVA + PERMDISP]
+                 Comparison                    Space  Pseudo_F     R2  p_perm  p_holm  PERMDISP_p
+Overall (flat vs mod vs tv)         6D non-redundant    2.6884 0.0487  0.0083     NaN      0.8990
+                flat vs mod         6D non-redundant    2.7637 0.0326  0.0250  0.0500      0.3660
+                 flat vs tv         6D non-redundant    4.2020 0.0599  0.0027  0.0080      0.2067
+                  mod vs tv         6D non-redundant    1.3066 0.0206  0.2527  0.2527      0.0830
+Overall (flat vs mod vs tv) 9D redundant (reference)    2.5577 0.0465  0.0063  0.0063         NaN
+
+==============================================================================
+STEP 5: CLASSIFICATION, BASELINES, UNCERTAINTY AND IMPORTANCE
+==============================================================================
+
+[Classification ablation: 10x5 repeated stratified CV]
+                             FeatureSet                  Model  Acc_Mean  Acc_CI_Low  Acc_CI_High  BalAcc_Mean  MacroF1_Mean  Kappa_Mean  Brier_Mean
+                          Set 1: Raw 6D LASSO-Logit (nested C)     0.460       0.444        0.476        0.396         0.344       0.118       0.640
+                          Set 1: Raw 6D           RandomForest     0.491       0.462        0.520        0.462         0.452       0.208       0.612
+                  Set 2: +Engineered 9D LASSO-Logit (nested C)     0.452       0.435        0.470        0.387         0.332       0.103       0.639
+                  Set 2: +Engineered 9D           RandomForest     0.539       0.510        0.567        0.496         0.484       0.280       0.552
+                Set 3: +Peak regime 10D LASSO-Logit (nested C)     0.470       0.453        0.487        0.401         0.345       0.128       0.636
+                Set 3: +Peak regime 10D           RandomForest     0.538       0.509        0.566        0.495         0.484       0.277       0.548
+Set 4: +Structural flags (definitional) LASSO-Logit (nested C)     0.945       0.932        0.957        0.950         0.951       0.914       0.171
+Set 4: +Structural flags (definitional)           RandomForest     0.931       0.917        0.944        0.939         0.939       0.892       0.165
+           Definitional flags only (2D) LASSO-Logit (nested C)     0.945       0.932        0.957        0.950         0.951       0.914       0.171
+           Definitional flags only (2D)           RandomForest     0.945       0.932        0.957        0.950         0.951       0.914       0.105
+Majority baseline = 0.407; stratified random = 0.353
+
+[StratifiedGroupKFold by recording date]
+                             FeatureSet                  Model  Grouped_Acc_Mean  Grouped_Acc_SD  Grouped_BalAcc_Mean  N_valid_folds
+                          Set 1: Raw 6D LASSO-Logit (nested C)             0.490           0.271                0.472              5
+                          Set 1: Raw 6D           RandomForest             0.321           0.120                0.348              5
+                  Set 2: +Engineered 9D LASSO-Logit (nested C)             0.517           0.252                0.494              5
+                  Set 2: +Engineered 9D           RandomForest             0.406           0.097                0.414              5
+                Set 3: +Peak regime 10D LASSO-Logit (nested C)             0.512           0.256                0.483              5
+                Set 3: +Peak regime 10D           RandomForest             0.432           0.110                0.440              5
+Set 4: +Structural flags (definitional) LASSO-Logit (nested C)             0.947           0.058                0.947              5
+Set 4: +Structural flags (definitional)           RandomForest             0.917           0.059                0.919              5
+           Definitional flags only (2D) LASSO-Logit (nested C)             0.947           0.058                0.947              5
+           Definitional flags only (2D)           RandomForest             0.947           0.058                0.947              5
+
+[Feature importance, Set 3]
+          Feature  CV_PermImp_Mean  MutualInfo  LASSO_SelectFreq
+    HarmonicRatio            0.048       0.340             0.210
+              F01            0.033       0.131             0.775
+              Q25            0.009       0.000             0.090
+         SpecSkew            0.005       0.089             0.265
+PeakAtFundamental           -0.000       0.011             0.665
+              Q75           -0.011       0.000             0.040
+    SpecBandwidth           -0.023       0.000             0.100
+         Duration           -0.023       0.079             0.415
+            Fpeak           -0.038       0.011             0.510
+              Q50           -0.038       0.006             0.240
+
+[RF hyperparameter sensitivity]
+ n_estimators  min_samples_leaf  Acc_Mean  BalAcc_Mean
+          200                 1     0.581        0.525
+          200                 2     0.559        0.523
+          200                 4     0.538        0.506
+          300                 1     0.569        0.516
+          300                 2     0.559        0.517
+          300                 4     0.547        0.515
+          500                 1     0.565        0.513
+          500                 2     0.553        0.511
+          500                 4     0.553        0.526
+
+==============================================================================
+STEP 6: HIERARCHICAL (DEFINITIONAL + SCIENTIFIC) CLASSIFIER
+==============================================================================
+
+[Hierarchical classifier]
+                              Stage                                         Type   Acc  BalAcc   AUC  Baseline
+         Stage 1: F02 present -> tv Definitional rule (not a learned classifier) 1.000   1.000   NaN     0.778
+               Stage 2: flat vs mod                                 RandomForest 0.749   0.748 0.830     0.524
+               Stage 2: flat vs mod                       LASSO-Logit (nested C) 0.596   0.587 0.590     0.524
+         Combined hierarchical rule                                 RandomForest 0.815   0.840   NaN     0.333
+         Combined hierarchical rule                       LASSO-Logit (nested C) 0.694   0.732   NaN     0.333
+Reference: flat 3-class acoustic RF                                   Set 3, 10D 0.538   0.495 0.737     0.333
+Stage 1 is DEFINITIONAL (F02 presence defines tv); do not report its 100% as a learned classification result.
+
+==============================================================================
+STEP 7: PLAYBACK ADJUSTMENT AND PROPAGATION SYNTHESIS
+==============================================================================
+
+[Playback: raw marginal rates]
+CallType  Response_Rate   N
+ control          0.129 139
+    flat          0.604  48
+     mod          0.636  33
+      tv          0.690  58
+
+[Playback: adjusted odds ratios, cluster bootstrap 95% CI]
+             Term  Odds_Ratio  OR_CI_Low  OR_CI_High                                      Note                                                                                                  Model_Note
+    CallType_flat      13.037      6.807      36.209 Reference = control (context = commuting) Quasi-separation possible (control Approach is all zero); ORs are adjusted associations, not causal effects
+     CallType_mod      15.243      7.172      50.439 Reference = control (context = commuting) Quasi-separation possible (control Approach is all zero); ORs are adjusted associations, not causal effects
+      CallType_tv      19.865      9.738      67.445 Reference = control (context = commuting) Quasi-separation possible (control Approach is all zero); ORs are adjusted associations, not causal effects
+    Context_after       1.174      0.410       2.911                     Reference = commuting Quasi-separation possible (control Approach is all zero); ORs are adjusted associations, not causal effects
+Context_searching       2.104      0.914       5.387                     Reference = commuting Quasi-separation possible (control Approach is all zero); ORs are adjusted associations, not causal effects
+         Distance       0.997      0.988       1.005                      Continuous covariate Quasi-separation possible (control Approach is all zero); ORs are adjusted associations, not causal effects
+        Npenguins       0.942      0.894       0.984                      Continuous covariate Quasi-separation possible (control Approach is all zero); ORs are adjusted associations, not causal effects
+
+[Propagation: composite fidelity and 50% crossing distance]
+CallType  Crossing_50m  Fidelity_128m  Fidelity_256m
+    flat        84.721          0.359          0.176
+     mod       144.563          0.553          0.250
+      tv       169.725          0.654          0.276
+
+[Information x robustness trade-off]
+CallType  AUC_OvR  Fidelity_128m  Fidelity_256m  Crossing_50m  InfoRetention_128  InfoRetention_256
+    flat    0.819          0.359          0.176        84.721              0.294              0.144
+     mod    0.724          0.553          0.250       144.563              0.400              0.181
+      tv    0.683          0.654          0.276       169.725              0.447              0.188
+
+[Feature contract for P2/P3]
+          Feature                                     Role                                                                                            Evidence_in_P1                                                      Downstream_Use
+              F01    First fundamental (carrier frequency)                                  Significant after date adjustment (Holm p=0.021); tv lower than flat/mod            P2: absorption and geometric spreading; P4: source level
+              F02 Second fundamental (two-voice structure)                                                 Definitional for tv; F02/F01 ~ 1.11; F02-F01 ~ 30 Hz beat P2: two-voice robustness; P4: individual signature / beat frequency
+            Fpeak                           Peak frequency Naive Holm significant, but not robust to date adjustment; regime-dependent (fundamental vs 3rd harmonic)                  P2: spectrogram and amplitude-spectrum correlation
+              Q25                25th-percentile frequency                                                                                           Not significant                                      P2: spectral envelope fidelity
+              Q50                         Median frequency                                                               Weak; significance driven by recording date                                      P2: spectral envelope fidelity
+              Q75                75th-percentile frequency                                                                                           Not significant                                      P2: spectral envelope fidelity
+         Duration                            Call duration                                                                                           Not significant                       P2: envelope correlation; P3: exposure window
+        PulseRate                 Pulse rate (mod/tv only)                                                                                 mod vs tv not significant                               P2: envelope correlation; P3: latency
+    SpecBandwidth                                Q75 - Q25                                                                                  Redundant with quartiles                                 P2: spectral fidelity (descriptive)
+    HarmonicRatio                              Fpeak / F01                                                     Bimodal mixture artifact; do not interpret as biology                           Do not use as a biological harmonic ratio
+         SpecSkew                        Spectral skewness                                                                                           Not significant                                    P2: spectral shape (descriptive)
+PeakAtFundamental                          Fpeak/F01 < 1.5                                                                  Regime indicator; separates peak regimes                                    P2: spectral peak interpretation
+         CallType                    Categorical call type                                                                                           Response factor                                         P3: playback response model
+
+==============================================================================
+HONEST CONCLUSIONS FOR THE PAPER
+==============================================================================
+1. Leakage-free 3-class acoustic accuracy (Set 3, RF) = 0.538; majority baseline = 0.407.
+2. Two definitional flags alone give 0.945; adding acoustics gives 0.931. The 94% is definitional, not acoustic.
+3. flat vs mod is the only genuine acoustic problem; the provided summary features leave a large overlap.
+4. Report global-Holm p-values and date-adjusted p-values, not the naive per-family p-values.
+5. Use the adjusted playback ORs (cluster bootstrap CI), not the raw marginal response rates, for functional claims.
+6. 50% composite-fidelity distances: flat=85 m, mod=145 m, tv=170 m
+
+All outputs saved to ./outputs_p1/

@@ -1,0 +1,44 @@
+Problem 1 v2 -- key results
+Environment: Python 3.12.7, numpy 1.26.4, pandas 3.0.1, sklearn 1.5.1, seaborn 0.13.2
+Mode: FULL (N_PERM=2999, N_BOOT=1000, N_REPEATS=10)
+Analytic sample: n=108 (flat=44, mod=40, tv=24); dates=16
+
+Univariate Kruskal-Wallis (Holm across 9 features):
+  F01:   p_raw=0.0103, p_holm=0.0827, p_holm_date=0.0210
+  Fpeak: p_raw=0.0022, p_holm=0.0194, p_holm_date=0.1520
+  Interpretation: Fpeak is naive-significant but not date-robust; F01 is the date-robust signal.
+
+Pairwise Mann-Whitney (global Holm across 27):
+  Naive significant: Fpeak (flat vs mod)
+  Date-adjusted significant: F01 (flat vs tv)
+
+PERMANOVA (6D non-redundant):
+  Overall: pseudo-F=2.688, R2=0.049, p=0.0083, PERMDISP p=0.899
+
+Classification (10x5 repeated stratified CV):
+  Leakage-free 3-class acoustic RF (Set 3): Acc=0.538; majority baseline=0.407
+  Definitional flags only (2D): Acc=0.945
+  Definitional + acoustic (Set 4): Acc=0.931
+  -> The ~94% is definitional; the acoustic-only model is near baseline.
+  Hierarchical Stage 2 (flat vs mod, RF): Acc=0.749; baseline=0.524
+
+Playback adjusted odds ratios (cluster bootstrap 95% CI):
+  CallType_flat: OR=13.04 [6.81, 36.21]
+  CallType_mod: OR=15.24 [7.17, 50.44]
+  CallType_tv: OR=19.87 [9.74, 67.45]
+
+Propagation composite fidelity:
+  flat: 50% crossing=84.7 m; fidelity@128m=0.359; fidelity@256m=0.176
+  mod: 50% crossing=144.6 m; fidelity@128m=0.553; fidelity@256m=0.250
+  tv: 50% crossing=169.7 m; fidelity@128m=0.654; fidelity@256m=0.276
+
+Information x robustness (AUC_ovr from Set 3 RF OOF):
+  flat: AUC=0.819; InfoRetention@128m=0.294
+  mod: AUC=0.724; InfoRetention@128m=0.400
+  tv: AUC=0.683; InfoRetention@128m=0.447
+
+Honest conclusions:
+  1. The v1 94% classifier was definitional (F02/PulseRate presence), not acoustic.
+  2. flat vs mod is the only genuine acoustic problem; the supplied summary features overlap heavily.
+  3. F01 is the date-robust univariate signal; Fpeak's naive significance is partly session-driven.
+  4. Report global-Holm and date-adjusted p-values; use adjusted playback ORs for functional claims.

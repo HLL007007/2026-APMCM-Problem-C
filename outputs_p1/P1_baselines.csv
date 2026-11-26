@@ -1,0 +1,2 @@
+﻿Majority_baseline_accuracy,Stratified_random_expected_accuracy,Balanced_accuracy_chance,Class_counts
+0.4074074074074074,0.35253772290809327,0.3333333333333333,"{'flat': 44, 'mod': 40, 'tv': 24}"

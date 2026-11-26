@@ -1,0 +1,13 @@
+﻿CallType,Context,Response_Rate,N
+control,commuting,0.09230769230769231,65
+control,after,0.19444444444444445,36
+control,searching,0.13157894736842105,38
+flat,commuting,0.44,25
+flat,after,0.6666666666666666,12
+flat,searching,0.9090909090909091,11
+mod,commuting,0.4,15
+mod,after,0.6666666666666666,9
+mod,searching,1.0,9
+tv,commuting,0.72,25
+tv,after,0.3333333333333333,15
+tv,searching,0.9444444444444444,18

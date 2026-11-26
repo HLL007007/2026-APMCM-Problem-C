@@ -1,12 +1,18 @@
-﻿Dataset,Raw_Rows,Dropped_Invalid,Clean_Rows
-Data01_AfricanPenguins_seasurface_calls_acoustics.csv,108,0,108
-Data02_AfricanPenguins_playbacks_data.csv,278,0,278
-Data03_correlation1m_flat_call_spectrogram.csv,300,0,300
-Data04_correlation1m_modulated_call_spectrogram.csv,300,0,300
-Data05_correlation1m_twovoice_call_spectrogram.csv,300,0,300
-Data06_correlation1m_flat_call_amplitude_spectrum.csv,300,0,300
-Data07_correlation1m_modulated_call_amplitude_spectrum.csv,300,0,300
-Data08_correlation1m_twovoice_call_amplitude_spectrum.csv,300,0,300
-Data09_correlation1m_flat_call_envelope.csv,300,0,300
-Data10_correlation1m_modulated_call_envelope.csv,300,0,300
-Data11_correlation1m_twovoice_call_envelope.csv,300,0,300
+﻿Dataset,Step,Rows_Removed,Rows_Remaining,Cells_Removed
+Data01_AfricanPenguins_seasurface_calls_acoustics.csv,Invalid CallType labels,0,108,0
+Data01_AfricanPenguins_seasurface_calls_acoustics.csv,Exact duplicate rows,0,108,0
+Data01_AfricanPenguins_seasurface_calls_acoustics.csv,Non-positive acoustic measurements,0,108,0
+Data01_AfricanPenguins_seasurface_calls_acoustics.csv,Non-monotone spectral quartiles,0,108,0
+Data01_AfricanPenguins_seasurface_calls_acoustics.csv,Missing shared 6D features,0,108,0
+Data01_AfricanPenguins_seasurface_calls_acoustics.csv,Final analytic sample,0,108,0
+Data02_AfricanPenguins_playbacks_data.csv,Exact duplicate rows,0,278,0
+Data02_AfricanPenguins_playbacks_data.csv,Final analytic sample,0,278,0
+Data03_correlation1m_flat_call_spectrogram.csv,Out-of-range correlation cells,0,300,0
+Data04_correlation1m_modulated_call_spectrogram.csv,Out-of-range correlation cells,0,300,0
+Data05_correlation1m_twovoice_call_spectrogram.csv,Out-of-range correlation cells,0,300,0
+Data06_correlation1m_flat_call_amplitude_spectrum.csv,Out-of-range correlation cells,0,300,0
+Data07_correlation1m_modulated_call_amplitude_spectrum.csv,Out-of-range correlation cells,0,300,0
+Data08_correlation1m_twovoice_call_amplitude_spectrum.csv,Out-of-range correlation cells,0,300,0
+Data09_correlation1m_flat_call_envelope.csv,Out-of-range correlation cells,0,300,0
+Data10_correlation1m_modulated_call_envelope.csv,Out-of-range correlation cells,0,300,0
+Data11_correlation1m_twovoice_call_envelope.csv,Out-of-range correlation cells,0,300,0

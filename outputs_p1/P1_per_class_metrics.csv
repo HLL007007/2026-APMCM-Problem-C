@@ -1,0 +1,10 @@
+﻿FeatureSet,Model,CallType,Precision,Recall,F1,Support
+Set 3: +Peak regime 10D,RandomForest,flat,0.6818181818181818,0.6818181818181818,0.6818181818181818,44
+Set 3: +Peak regime 10D,RandomForest,mod,0.5,0.65,0.5652173913043478,40
+Set 3: +Peak regime 10D,RandomForest,tv,0.4166666666666667,0.20833333333333334,0.2777777777777778,24
+Set 3: +Peak regime 10D,LASSO-Logit (nested C),flat,0.48,0.8181818181818182,0.6050420168067226,44
+Set 3: +Peak regime 10D,LASSO-Logit (nested C),mod,0.46875,0.375,0.4166666666666667,40
+Set 3: +Peak regime 10D,LASSO-Logit (nested C),tv,0.0,0.0,0.0,24
+Set 4: +Structural flags (definitional),RandomForest,flat,0.875,0.9545454545454546,0.9130434782608695,44
+Set 4: +Structural flags (definitional),RandomForest,mod,0.9444444444444444,0.85,0.8947368421052632,40
+Set 4: +Structural flags (definitional),RandomForest,tv,1.0,1.0,1.0,24

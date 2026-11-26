@@ -1,0 +1,3 @@
+﻿Flag,Chi2,df,p_value,Interpretation
+F02_present,108.00000000000003,2,3.532628572200764e-24,Deterministic/definitional association; not random missingness
+PulseRate_present,74.26666666666665,2,7.467895612174046e-17,Deterministic/definitional association; not random missingness

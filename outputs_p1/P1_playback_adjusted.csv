@@ -1,0 +1,8 @@
+﻿Term,Odds_Ratio,OR_CI_Low,OR_CI_High,Note,Model_Note
+CallType_flat,13.037392465904084,6.806705160686849,36.20863586819517,Reference = control (context = commuting),"Quasi-separation possible (control Approach is all zero); ORs are adjusted associations, not causal effects"
+CallType_mod,15.24341880983787,7.172313566882314,50.439437185533386,Reference = control (context = commuting),"Quasi-separation possible (control Approach is all zero); ORs are adjusted associations, not causal effects"
+CallType_tv,19.865492656767657,9.737830713273784,67.44503206752036,Reference = control (context = commuting),"Quasi-separation possible (control Approach is all zero); ORs are adjusted associations, not causal effects"
+Context_after,1.1743631683723772,0.41047409383451244,2.911429593301132,Reference = commuting,"Quasi-separation possible (control Approach is all zero); ORs are adjusted associations, not causal effects"
+Context_searching,2.104012052935582,0.9141748554680335,5.386963366482358,Reference = commuting,"Quasi-separation possible (control Approach is all zero); ORs are adjusted associations, not causal effects"
+Distance,0.9969200751398483,0.9875511579110152,1.0045169718734628,Continuous covariate,"Quasi-separation possible (control Approach is all zero); ORs are adjusted associations, not causal effects"
+Npenguins,0.9418526974401129,0.8936582422333368,0.9836774166175084,Continuous covariate,"Quasi-separation possible (control Approach is all zero); ORs are adjusted associations, not causal effects"
