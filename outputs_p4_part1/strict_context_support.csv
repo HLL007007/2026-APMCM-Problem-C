@@ -1,0 +1,4 @@
+﻿call_type,common_lower,common_upper,radius,status,report_as
+flat,50,150,74.9001597356375,crossing,75 m
+mod,30,120,120.0,at_least_upper_limit,>=120 m
+tv,40,150,144.31464494610606,crossing,144 m

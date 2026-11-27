@@ -1,0 +1,17 @@
+[Environment] Python 3.12.7 | numpy 1.26.4 | pandas 3.0.1 | sklearn 1.5.1 | seaborn 0.13.2
+[Mode] FULL: N_BOOT=1000, N_SPLITS=5
+Pairs = 139, typical group = 8, replicates = 1000
+Fidelity weights: [0.33828 0.33969 0.32204] Context weights: [0.46763 0.27338 0.25899]
+call_type      context  lower_support  upper_support  radius               status  low95_clipped  high95_clipped  below_fraction  above_fraction report_as
+     flat    commuting              5            150   69.76             crossing           5.00          103.17            0.04            0.00      70 m
+     flat    searching             50            150  100.27             crossing          62.46          124.97            0.01            0.00     100 m
+     flat        after              5            200   50.21             crossing           5.00           89.75            0.16            0.00      50 m
+     flat standardized              5            200   74.90             crossing          25.63          102.11            0.01            0.00      75 m
+      mod    commuting             20            150  120.06             crossing          53.69          150.00            0.02            0.15     120 m
+      mod    searching             20            150  150.00 at_least_upper_limit         109.12          150.00            0.00            0.57   >=150 m
+      mod        after             30            120  100.24             crossing          30.00          120.00            0.12            0.21     100 m
+      mod standardized             10            150  125.42             crossing          76.79          150.00            0.01            0.16     125 m
+       tv    commuting             20            150  140.11             crossing          57.69          150.00            0.02            0.35     140 m
+       tv    searching             40            200  171.89             crossing         120.82          200.00            0.00            0.09     172 m
+       tv        after             20            200  112.98             crossing          20.00          180.79            0.13            0.00     113 m
+       tv standardized             20            200  144.31             crossing          78.13          192.72            0.01            0.01     144 m

@@ -1,0 +1,256 @@
+﻿call_type,weights,threshold,radius,status
+flat,Main,8.0,136.54152305624515,crossing
+flat,Main,9.0,123.31941076944295,crossing
+flat,Main,10.0,114.60354870398902,crossing
+flat,Main,11.0,106.18414136725046,crossing
+flat,Main,12.0,98.02945345199686,crossing
+flat,Main,13.0,90.11258871079689,crossing
+flat,Main,14.0,82.40979934431623,crossing
+flat,Main,15.0,74.9001597356375,crossing
+flat,Main,16.0,67.56697989714169,crossing
+flat,Main,17.0,60.4159150502513,crossing
+flat,Main,18.0,53.43226157859996,crossing
+flat,Main,19.0,46.582562694607674,crossing
+flat,Main,20.0,39.85630721175679,crossing
+flat,Main,21.0,33.24470109074531,crossing
+flat,Main,22.0,28.054128989645946,crossing
+flat,Main,23.0,23.240981321034578,crossing
+flat,Main,24.0,18.48932979127733,crossing
+flat,Equal behaviors,8.0,147.33242190011651,crossing
+flat,Equal behaviors,9.0,130.25407252409414,crossing
+flat,Equal behaviors,10.0,120.83432031733187,crossing
+flat,Equal behaviors,11.0,112.79490973318161,crossing
+flat,Equal behaviors,12.0,105.007052050888,crossing
+flat,Equal behaviors,13.0,97.44719797764577,crossing
+flat,Equal behaviors,14.0,90.09233743600666,crossing
+flat,Equal behaviors,15.0,82.92465948341525,crossing
+flat,Equal behaviors,16.0,75.92731764161731,crossing
+flat,Equal behaviors,17.0,69.0856398746364,crossing
+flat,Equal behaviors,18.0,62.39658252738929,crossing
+flat,Equal behaviors,19.0,55.867903748738634,crossing
+flat,Equal behaviors,20.0,49.45917148303524,crossing
+flat,Equal behaviors,21.0,43.16048871868748,crossing
+flat,Equal behaviors,22.0,36.963951069568246,crossing
+flat,Equal behaviors,23.0,31.147329144872703,crossing
+flat,Equal behaviors,24.0,26.635263219582406,crossing
+flat,Vocal contact,8.0,176.56184452594832,crossing
+flat,Vocal contact,9.0,159.46946489042304,crossing
+flat,Vocal contact,10.0,143.12255782302344,crossing
+flat,Vocal contact,11.0,127.69667907463793,crossing
+flat,Vocal contact,12.0,120.30680943327579,crossing
+flat,Vocal contact,13.0,113.06169592412579,crossing
+flat,Vocal contact,14.0,105.9476073231503,crossing
+flat,Vocal contact,15.0,98.95158902789119,crossing
+flat,Vocal contact,16.0,92.06209527448624,crossing
+flat,Vocal contact,17.0,85.2687382299356,crossing
+flat,Vocal contact,18.0,78.56176216670909,crossing
+flat,Vocal contact,19.0,71.93237909773758,crossing
+flat,Vocal contact,20.0,65.3731332497523,crossing
+flat,Vocal contact,21.0,58.91081593316192,crossing
+flat,Vocal contact,22.0,52.51357361276226,crossing
+flat,Vocal contact,23.0,46.1657687752934,crossing
+flat,Vocal contact,24.0,39.86214660121873,crossing
+flat,Approach,8.0,113.64085813889682,crossing
+flat,Approach,9.0,103.70657837112734,crossing
+flat,Approach,10.0,94.24657795474998,crossing
+flat,Approach,11.0,85.20271145144855,crossing
+flat,Approach,12.0,76.52727893724506,crossing
+flat,Approach,13.0,68.17960262530691,crossing
+flat,Approach,14.0,60.14813552695666,crossing
+flat,Approach,15.0,52.40396536174402,crossing
+flat,Approach,16.0,44.89862309752529,crossing
+flat,Approach,17.0,37.61236637754302,crossing
+flat,Approach,18.0,30.8673553336607,crossing
+flat,Approach,19.0,25.551972765269884,crossing
+flat,Approach,20.0,20.349404431301398,crossing
+flat,Approach,21.0,13.346075254938295,crossing
+flat,Approach,22.0,5.0,below_lower_limit
+flat,Approach,23.0,5.0,below_lower_limit
+flat,Approach,24.0,5.0,below_lower_limit
+flat,No co-occurrence bonus,8.0,132.78173910192342,crossing
+flat,No co-occurrence bonus,9.0,120.95497027187709,crossing
+flat,No co-occurrence bonus,10.0,111.85289563675906,crossing
+flat,No co-occurrence bonus,11.0,103.05450038191678,crossing
+flat,No co-occurrence bonus,12.0,94.53127504420648,crossing
+flat,No co-occurrence bonus,13.0,86.25688620366029,crossing
+flat,No co-occurrence bonus,14.0,78.2097578098332,crossing
+flat,No co-occurrence bonus,15.0,70.37065620298974,crossing
+flat,No co-occurrence bonus,16.0,62.7301605861979,crossing
+flat,No co-occurrence bonus,17.0,55.30342625328046,crossing
+flat,No co-occurrence bonus,18.0,48.037542893419186,crossing
+flat,No co-occurrence bonus,19.0,40.92148835470841,crossing
+flat,No co-occurrence bonus,20.0,33.94450549910539,crossing
+flat,No co-occurrence bonus,21.0,28.328149597558074,crossing
+flat,No co-occurrence bonus,22.0,23.278123937673215,crossing
+flat,No co-occurrence bonus,23.0,18.300679761159703,crossing
+flat,No co-occurrence bonus,24.0,7.084473148912837,crossing
+mod,Main,8.0,150.0,at_least_upper_limit
+mod,Main,9.0,150.0,at_least_upper_limit
+mod,Main,10.0,150.0,at_least_upper_limit
+mod,Main,11.0,150.0,at_least_upper_limit
+mod,Main,12.0,150.0,at_least_upper_limit
+mod,Main,13.0,144.48998215716225,crossing
+mod,Main,14.0,134.51336683074507,crossing
+mod,Main,15.0,125.41987479960132,crossing
+mod,Main,16.0,117.6645752623912,crossing
+mod,Main,17.0,110.13159767848266,crossing
+mod,Main,18.0,102.7999954031853,crossing
+mod,Main,19.0,95.65079538292399,crossing
+mod,Main,20.0,88.66739836808509,crossing
+mod,Main,21.0,81.83530534161257,crossing
+mod,Main,22.0,75.14190618120931,crossing
+mod,Main,23.0,68.57587654562363,crossing
+mod,Main,24.0,58.80135764644351,crossing
+mod,Equal behaviors,8.0,150.0,at_least_upper_limit
+mod,Equal behaviors,9.0,150.0,at_least_upper_limit
+mod,Equal behaviors,10.0,150.0,at_least_upper_limit
+mod,Equal behaviors,11.0,150.0,at_least_upper_limit
+mod,Equal behaviors,12.0,150.0,at_least_upper_limit
+mod,Equal behaviors,13.0,150.0,at_least_upper_limit
+mod,Equal behaviors,14.0,141.57422574006787,crossing
+mod,Equal behaviors,15.0,132.08462904688855,crossing
+mod,Equal behaviors,16.0,123.7719902569864,crossing
+mod,Equal behaviors,17.0,116.3675283072426,crossing
+mod,Equal behaviors,18.0,109.16044680292225,crossing
+mod,Equal behaviors,19.0,102.13263841499082,crossing
+mod,Equal behaviors,20.0,95.26766682559747,crossing
+mod,Equal behaviors,21.0,88.5506523871704,crossing
+mod,Equal behaviors,22.0,81.96815609986453,crossing
+mod,Equal behaviors,23.0,75.50945481545227,crossing
+mod,Equal behaviors,24.0,69.16288257991617,crossing
+mod,Vocal contact,8.0,150.0,at_least_upper_limit
+mod,Vocal contact,9.0,150.0,at_least_upper_limit
+mod,Vocal contact,10.0,150.0,at_least_upper_limit
+mod,Vocal contact,11.0,150.0,at_least_upper_limit
+mod,Vocal contact,12.0,150.0,at_least_upper_limit
+mod,Vocal contact,13.0,150.0,at_least_upper_limit
+mod,Vocal contact,14.0,150.0,at_least_upper_limit
+mod,Vocal contact,15.0,150.0,at_least_upper_limit
+mod,Vocal contact,16.0,145.96736841462655,crossing
+mod,Vocal contact,17.0,136.36863457280168,crossing
+mod,Vocal contact,18.0,127.14944370934481,crossing
+mod,Vocal contact,19.0,119.664428856839,crossing
+mod,Vocal contact,20.0,112.28417618845982,crossing
+mod,Vocal contact,21.0,104.99741340504686,crossing
+mod,Vocal contact,22.0,97.79430588681305,crossing
+mod,Vocal contact,23.0,90.66509733000763,crossing
+mod,Vocal contact,24.0,83.60127507597355,crossing
+mod,Approach,8.0,150.0,at_least_upper_limit
+mod,Approach,9.0,150.0,at_least_upper_limit
+mod,Approach,10.0,150.0,at_least_upper_limit
+mod,Approach,11.0,142.82013672133883,crossing
+mod,Approach,12.0,132.29899491036113,crossing
+mod,Approach,13.0,123.16758624521255,crossing
+mod,Approach,14.0,115.05163568637442,crossing
+mod,Approach,15.0,107.25823813440181,crossing
+mod,Approach,16.0,99.75117823959577,crossing
+mod,Approach,17.0,92.50099872818902,crossing
+mod,Approach,18.0,85.48170131185583,crossing
+mod,Approach,19.0,78.67120760574423,crossing
+mod,Approach,20.0,72.05004582369212,crossing
+mod,Approach,21.0,65.60243480164355,crossing
+mod,Approach,22.0,53.19939938824036,crossing
+mod,Approach,23.0,38.78316436200643,crossing
+mod,Approach,24.0,27.31679803284477,crossing
+mod,No co-occurrence bonus,8.0,150.0,at_least_upper_limit
+mod,No co-occurrence bonus,9.0,150.0,at_least_upper_limit
+mod,No co-occurrence bonus,10.0,150.0,at_least_upper_limit
+mod,No co-occurrence bonus,11.0,150.0,at_least_upper_limit
+mod,No co-occurrence bonus,12.0,150.0,at_least_upper_limit
+mod,No co-occurrence bonus,13.0,144.1110387754037,crossing
+mod,No co-occurrence bonus,14.0,133.67964213188404,crossing
+mod,No co-occurrence bonus,15.0,124.38773374000687,crossing
+mod,No co-occurrence bonus,16.0,116.33647670027416,crossing
+mod,No co-occurrence bonus,17.0,108.51820726538907,crossing
+mod,No co-occurrence bonus,18.0,100.91142358567231,crossing
+mod,No co-occurrence bonus,19.0,93.49837238070187,crossing
+mod,No co-occurrence bonus,20.0,86.26150921842333,crossing
+mod,No co-occurrence bonus,21.0,79.18646111060407,crossing
+mod,No co-occurrence bonus,22.0,72.2601017067864,crossing
+mod,No co-occurrence bonus,23.0,65.47046226012914,crossing
+mod,No co-occurrence bonus,24.0,48.94644942242728,crossing
+tv,Main,8.0,200.0,at_least_upper_limit
+tv,Main,9.0,200.0,at_least_upper_limit
+tv,Main,10.0,191.67364572691184,crossing
+tv,Main,11.0,181.22909806864638,crossing
+tv,Main,12.0,171.328683769387,crossing
+tv,Main,13.0,161.91006136708154,crossing
+tv,Main,14.0,152.9207664581995,crossing
+tv,Main,15.0,144.31464494610606,crossing
+tv,Main,16.0,136.0504057432884,crossing
+tv,Main,17.0,128.09420248516633,crossing
+tv,Main,18.0,115.6469531490734,crossing
+tv,Main,19.0,103.6301347058037,crossing
+tv,Main,20.0,92.02454375185519,crossing
+tv,Main,21.0,80.76417851619861,crossing
+tv,Main,22.0,69.79127522471686,crossing
+tv,Main,23.0,56.39465834046914,crossing
+tv,Main,24.0,39.88900283069028,crossing
+tv,Equal behaviors,8.0,200.0,at_least_upper_limit
+tv,Equal behaviors,9.0,200.0,at_least_upper_limit
+tv,Equal behaviors,10.0,196.15464641570827,crossing
+tv,Equal behaviors,11.0,185.61734611922154,crossing
+tv,Equal behaviors,12.0,175.61502672811827,crossing
+tv,Equal behaviors,13.0,166.09288911163225,crossing
+tv,Equal behaviors,14.0,157.00307952277228,crossing
+tv,Equal behaviors,15.0,148.30320147270814,crossing
+tv,Equal behaviors,16.0,139.95356137246773,crossing
+tv,Equal behaviors,17.0,131.92170139428487,crossing
+tv,Equal behaviors,18.0,121.6853872538572,crossing
+tv,Equal behaviors,19.0,109.42167313289013,crossing
+tv,Equal behaviors,20.0,97.639032617369,crossing
+tv,Equal behaviors,21.0,86.26066262534583,crossing
+tv,Equal behaviors,22.0,75.2206218386866,crossing
+tv,Equal behaviors,23.0,64.46175968130211,crossing
+tv,Equal behaviors,24.0,48.3336894335603,crossing
+tv,Vocal contact,8.0,200.0,at_least_upper_limit
+tv,Vocal contact,9.0,200.0,at_least_upper_limit
+tv,Vocal contact,10.0,200.0,at_least_upper_limit
+tv,Vocal contact,11.0,200.0,at_least_upper_limit
+tv,Vocal contact,12.0,200.0,at_least_upper_limit
+tv,Vocal contact,13.0,199.84086759425028,crossing
+tv,Vocal contact,14.0,191.08785157543994,crossing
+tv,Vocal contact,15.0,182.58750284826826,crossing
+tv,Vocal contact,16.0,174.31843035734795,crossing
+tv,Vocal contact,17.0,166.2617294962786,crossing
+tv,Vocal contact,18.0,158.39965244116078,crossing
+tv,Vocal contact,19.0,150.71539021080216,crossing
+tv,Vocal contact,20.0,143.19364868284444,crossing
+tv,Vocal contact,21.0,135.82016274718345,crossing
+tv,Vocal contact,22.0,128.5816644895966,crossing
+tv,Vocal contact,23.0,115.8276031728599,crossing
+tv,Vocal contact,24.0,102.73548160006472,crossing
+tv,Approach,8.0,188.3144694427262,crossing
+tv,Approach,9.0,176.29640891363744,crossing
+tv,Approach,10.0,165.1623037841989,crossing
+tv,Approach,11.0,154.7809043559395,crossing
+tv,Approach,12.0,145.04454661303203,crossing
+tv,Approach,13.0,135.86701727512326,crossing
+tv,Approach,14.0,126.73944686018072,crossing
+tv,Approach,15.0,114.18636831769932,crossing
+tv,Approach,16.0,102.31530970028132,crossing
+tv,Approach,17.0,91.01490780858497,crossing
+tv,Approach,18.0,80.19686180179328,crossing
+tv,Approach,19.0,69.78676642864014,crossing
+tv,Approach,20.0,58.03081438657728,crossing
+tv,Approach,21.0,44.27340746095885,crossing
+tv,Approach,22.0,30.661505544359347,crossing
+tv,Approach,23.0,20.0,below_lower_limit
+tv,Approach,24.0,20.0,below_lower_limit
+tv,No co-occurrence bonus,8.0,200.0,at_least_upper_limit
+tv,No co-occurrence bonus,9.0,200.0,at_least_upper_limit
+tv,No co-occurrence bonus,10.0,197.57986623092913,crossing
+tv,No co-occurrence bonus,11.0,186.8126842537028,crossing
+tv,No co-occurrence bonus,12.0,176.55546802307606,crossing
+tv,No co-occurrence bonus,13.0,166.75787392942325,crossing
+tv,No co-occurrence bonus,14.0,157.37636908367188,crossing
+tv,No co-occurrence bonus,15.0,148.3712166066458,crossing
+tv,No co-occurrence bonus,16.0,139.70737027431136,crossing
+tv,No co-occurrence bonus,17.0,131.3536323483903,crossing
+tv,No co-occurrence bonus,18.0,120.00058196453645,crossing
+tv,No co-occurrence bonus,19.0,106.86623732977291,crossing
+tv,No co-occurrence bonus,20.0,94.22863850628637,crossing
+tv,No co-occurrence bonus,21.0,82.0107481983545,crossing
+tv,No co-occurrence bonus,22.0,70.14721825194317,crossing
+tv,No co-occurrence bonus,23.0,55.310896520586276,crossing
+tv,No co-occurrence bonus,24.0,36.86720419222273,crossing

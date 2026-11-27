@@ -1,0 +1,4 @@
+﻿call_type,near_source_distance,near_source_index,threshold,threshold_over_near_source,note
+flat,5.0,25.52231432295835,15.0,0.5877209962306159,15 points is approximately half of the near-source index; sensitivity 8-24
+mod,10.0,28.857789835498707,15.0,0.5197903264770511,15 points is approximately half of the near-source index; sensitivity 8-24
+tv,20.0,25.184992169113144,15.0,0.5955927998419626,15 points is approximately half of the near-source index; sensitivity 8-24
