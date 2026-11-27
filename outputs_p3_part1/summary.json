@@ -1,0 +1,12 @@
+{
+  "pairs": 139,
+  "discordant": 76,
+  "mcnemar_p": 7.747704489416678e-20,
+  "paired_swap_p": 9.99990000099999e-06,
+  "different_distances": 90,
+  "raw_diff_ci": [
+    0.4316546762589928,
+    0.6115107913669064
+  ],
+  "sim_critical": 3.8002316381005707
+}

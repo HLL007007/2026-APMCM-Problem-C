@@ -1,0 +1,76 @@
+﻿repeat,fold,model,penalty
+0,0,Separate AFT,0.0
+0,0,Separate ridge AFT,64.0
+0,0,Shared AFT,64.0
+0,1,Separate AFT,0.0
+0,1,Separate ridge AFT,16.0
+0,1,Shared AFT,64.0
+0,2,Separate AFT,0.0
+0,2,Separate ridge AFT,16.0
+0,2,Shared AFT,64.0
+0,3,Separate AFT,0.0
+0,3,Separate ridge AFT,64.0
+0,3,Shared AFT,64.0
+0,4,Separate AFT,0.0
+0,4,Separate ridge AFT,64.0
+0,4,Shared AFT,64.0
+1,0,Separate AFT,0.0
+1,0,Separate ridge AFT,64.0
+1,0,Shared AFT,64.0
+1,1,Separate AFT,0.0
+1,1,Separate ridge AFT,16.0
+1,1,Shared AFT,64.0
+1,2,Separate AFT,0.0
+1,2,Separate ridge AFT,64.0
+1,2,Shared AFT,64.0
+1,3,Separate AFT,0.0
+1,3,Separate ridge AFT,64.0
+1,3,Shared AFT,64.0
+1,4,Separate AFT,0.0
+1,4,Separate ridge AFT,64.0
+1,4,Shared AFT,64.0
+2,0,Separate AFT,0.0
+2,0,Separate ridge AFT,64.0
+2,0,Shared AFT,64.0
+2,1,Separate AFT,0.0
+2,1,Separate ridge AFT,64.0
+2,1,Shared AFT,16.0
+2,2,Separate AFT,0.0
+2,2,Separate ridge AFT,16.0
+2,2,Shared AFT,64.0
+2,3,Separate AFT,0.0
+2,3,Separate ridge AFT,64.0
+2,3,Shared AFT,64.0
+2,4,Separate AFT,0.0
+2,4,Separate ridge AFT,64.0
+2,4,Shared AFT,64.0
+3,0,Separate AFT,0.0
+3,0,Separate ridge AFT,64.0
+3,0,Shared AFT,64.0
+3,1,Separate AFT,0.0
+3,1,Separate ridge AFT,64.0
+3,1,Shared AFT,4.0
+3,2,Separate AFT,0.0
+3,2,Separate ridge AFT,64.0
+3,2,Shared AFT,64.0
+3,3,Separate AFT,0.0
+3,3,Separate ridge AFT,64.0
+3,3,Shared AFT,64.0
+3,4,Separate AFT,0.0
+3,4,Separate ridge AFT,64.0
+3,4,Shared AFT,64.0
+4,0,Separate AFT,0.0
+4,0,Separate ridge AFT,16.0
+4,0,Shared AFT,64.0
+4,1,Separate AFT,0.0
+4,1,Separate ridge AFT,16.0
+4,1,Shared AFT,64.0
+4,2,Separate AFT,0.0
+4,2,Separate ridge AFT,64.0
+4,2,Shared AFT,64.0
+4,3,Separate AFT,0.0
+4,3,Separate ridge AFT,64.0
+4,3,Shared AFT,64.0
+4,4,Separate AFT,0.0
+4,4,Separate ridge AFT,64.0
+4,4,Shared AFT,64.0
