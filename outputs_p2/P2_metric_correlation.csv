@@ -1,0 +1,13 @@
+﻿Group,Metric_1,Metric_2,Spearman_rho,N
+pooled,Spectrogram,Amplitude spectrum,0.9515567865742952,5850
+pooled,Spectrogram,Envelope,0.8638835212333773,5850
+pooled,Amplitude spectrum,Envelope,0.8744833984227739,5850
+flat,Spectrogram,Amplitude spectrum,0.9376967838223575,1960
+flat,Spectrogram,Envelope,0.8690107689318745,1960
+flat,Amplitude spectrum,Envelope,0.882900677568872,1960
+mod,Spectrogram,Amplitude spectrum,0.984059254803332,2030
+mod,Spectrogram,Envelope,0.9137686586416196,2030
+mod,Amplitude spectrum,Envelope,0.8910187644528851,2030
+tv,Spectrogram,Amplitude spectrum,0.9795826306416996,1860
+tv,Spectrogram,Envelope,0.8814975580415217,1860
+tv,Amplitude spectrum,Envelope,0.8614801516243462,1860

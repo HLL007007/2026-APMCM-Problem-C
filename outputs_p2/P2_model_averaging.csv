@@ -1,0 +1,19 @@
+﻿CallType,Model,Weight,Eligible
+flat,Isotonic (monotone),0.21962434493049143,True
+flat,Physical log-exp,0.18184526696142586,True
+flat,Physical power-exp,0.0,False
+flat,Logistic,0.21396261587931534,True
+flat,Weibull,0.1611939766091833,True
+flat,GAM spline,0.22337379561958398,True
+mod,Isotonic (monotone),0.4877290696414299,True
+mod,Physical log-exp,0.0,False
+mod,Physical power-exp,0.0,False
+mod,Logistic,0.0,False
+mod,Weibull,0.0,False
+mod,GAM spline,0.5122709303585702,True
+tv,Isotonic (monotone),0.4756436265946581,True
+tv,Physical log-exp,0.0,False
+tv,Physical power-exp,0.0,False
+tv,Logistic,0.0,False
+tv,Weibull,0.0,False
+tv,GAM spline,0.5243563734053419,True

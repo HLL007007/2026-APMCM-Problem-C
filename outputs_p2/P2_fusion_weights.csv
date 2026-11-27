@@ -1,0 +1,13 @@
+﻿Method,Metric,Weight,Loading_PC1,Communality,Uniqueness,Note
+PCA,Spectrogram,0.33827860411029104,0.5857466722561598,0.34309916405916513,0.6569008359408348,PC1 explains 92.3% of standardised variance
+PCA,Amplitude spectrum,0.3396855598511003,0.588182887946946,0.3459591096736096,0.6540408903263903,PC1 explains 92.3% of standardised variance
+PCA,Envelope,0.3220358360386086,0.55762149014114,0.31094172626722555,0.6890582737327744,PC1 explains 92.3% of standardised variance
+Entropy,Spectrogram,0.29486862279776577,,,,Entropy-weight method
+Entropy,Amplitude spectrum,0.2670449610759977,,,,Entropy-weight method
+Entropy,Envelope,0.4380864161262366,,,,Entropy-weight method
+Equal,Spectrogram,0.3333333333333333,,,,Equal weights
+Equal,Amplitude spectrum,0.3333333333333333,,,,Equal weights
+Equal,Envelope,0.3333333333333333,,,,Equal weights
+Geometric,Spectrogram,0.33827860411029104,0.5857466722561598,0.34309916405916513,0.6569008359408348,PCA weights used in weighted geometric mean
+Geometric,Amplitude spectrum,0.3396855598511003,0.588182887946946,0.3459591096736096,0.6540408903263903,PCA weights used in weighted geometric mean
+Geometric,Envelope,0.3220358360386086,0.55762149014114,0.31094172626722555,0.6890582737327744,PCA weights used in weighted geometric mean

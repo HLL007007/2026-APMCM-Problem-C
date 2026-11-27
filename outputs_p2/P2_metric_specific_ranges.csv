@@ -1,0 +1,19 @@
+﻿CallType,Metric,tau,Range_m,Status,Method,Interpretation
+flat,Spectrogram,0.5,110.46572817297914,interpolated,Isotonic (monotone),
+flat,Spectrogram,0.7,70.65608219340818,interpolated,Isotonic (monotone),
+flat,Amplitude spectrum,0.5,116.37495392765463,interpolated,Isotonic (monotone),
+flat,Amplitude spectrum,0.7,66.87256012029476,interpolated,Isotonic (monotone),
+flat,Envelope,0.5,37.05323846127266,interpolated,Isotonic (monotone),
+flat,Envelope,0.7,0.0,below_4m,Isotonic (monotone),threshold not reached at 4 m
+mod,Spectrogram,0.5,168.96685546132778,interpolated,Isotonic (monotone),
+mod,Spectrogram,0.7,104.15381420578484,interpolated,Isotonic (monotone),
+mod,Amplitude spectrum,0.5,185.24434272492286,interpolated,Isotonic (monotone),
+mod,Amplitude spectrum,0.7,120.36876102488533,interpolated,Isotonic (monotone),
+mod,Envelope,0.5,87.3941862079351,interpolated,Isotonic (monotone),
+mod,Envelope,0.7,9.979744849954514,interpolated,Isotonic (monotone),
+tv,Spectrogram,0.5,200.77476510127087,interpolated,Isotonic (monotone),
+tv,Spectrogram,0.7,140.2289824722462,interpolated,Isotonic (monotone),
+tv,Amplitude spectrum,0.5,214.7877033716421,interpolated,Isotonic (monotone),
+tv,Amplitude spectrum,0.7,150.9138211008256,interpolated,Isotonic (monotone),
+tv,Envelope,0.5,86.79418959381537,interpolated,Isotonic (monotone),
+tv,Envelope,0.7,0.0,below_4m,Isotonic (monotone),threshold not reached at 4 m

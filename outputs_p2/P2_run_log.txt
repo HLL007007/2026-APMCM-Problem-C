@@ -1,0 +1,268 @@
+[Data check] 9 propagation CSV files found.
+[Data manifest] 16 files -> outputs_p2/P2_data_manifest.csv
+
+==============================================================================
+STEP 2: LOAD, AUDIT MISSINGNESS, FUSE, SUMMARISE
+==============================================================================
+CallType  Distance  N_total  N_valid_spec  N_valid_amp  N_valid_env  N_missing_any  Pct_missing_any
+    flat         4      300           300          300          300              0         0.000000
+    flat         8      300           300          300          300              0         0.000000
+    flat        16      300           300          300          300              0         0.000000
+    flat        32      300           290          290          290             10         3.333333
+    flat        64      300           250          250          250             50        16.666667
+    flat       128      300           230          230          230             70        23.333333
+    flat       256      300           290          290          290             10         3.333333
+     mod         4      300           300          300          300              0         0.000000
+     mod         8      300           300          300          300              0         0.000000
+     mod        16      300           300          300          300              0         0.000000
+     mod        32      300           300          300          300              0         0.000000
+     mod        64      300           300          300          300              0         0.000000
+     mod       128      300           230          230          230             70        23.333333
+     mod       256      300           300          300          300              0         0.000000
+      tv         4      300           300          300          300              0         0.000000
+      tv         8      300           300          300          300              0         0.000000
+      tv        16      300           300          300          300              0         0.000000
+      tv        32      300           270          270          270             30        10.000000
+      tv        64      300           290          290          290             10         3.333333
+      tv       128      300           190          190          190            110        36.666667
+      tv       256      300           210          210          210             90        30.000000
+
+==============================================================================
+STEP 3: DEGRADATION MODELS AND MODEL AVERAGING
+==============================================================================
+
+[flat]
+              Model  CV_RMSE    R2  Boundary  PoorFit
+Isotonic (monotone)    0.087 0.881     False    False
+   Physical log-exp    0.096 0.856     False    False
+ Physical power-exp    0.090 0.872      True    False
+           Logistic    0.088 0.878     False    False
+            Weibull    0.102 0.838     False    False
+         GAM spline    0.086 0.883     False    False
+  main=Isotonic (monotone); bootstrap=1000/1000 valid
+
+[mod]
+              Model  CV_RMSE    R2  Boundary  PoorFit
+Isotonic (monotone)    0.069 0.893     False    False
+   Physical log-exp    0.076 0.871      True    False
+ Physical power-exp    0.085 0.838      True    False
+           Logistic    0.074 0.877      True    False
+            Weibull    0.105 0.752     False     True
+         GAM spline    0.068 0.898     False    False
+  main=Isotonic (monotone); bootstrap=1000/1000 valid
+
+[tv]
+              Model  CV_RMSE    R2  Boundary  PoorFit
+Isotonic (monotone)    0.063 0.850     False    False
+   Physical log-exp    0.082 0.748      True    False
+ Physical power-exp    0.090 0.694      True    False
+           Logistic    0.068 0.826      True    False
+            Weibull    0.113 0.516     False     True
+         GAM spline    0.060 0.864     False    False
+  main=Isotonic (monotone); bootstrap=1000/1000 valid
+
+==============================================================================
+STEP 4: EFFECTIVE RANGE, MISSINGNESS BOUNDS, PROBABILISTIC RANGE
+==============================================================================
+CallType       Level  tau  Range_m  CI_Low  CI_High       Status
+    flat   Potential  0.5    90.85   89.13    92.88 interpolated
+    flat Recognition  0.6    64.07   62.14    66.45 interpolated
+    flat    Reliable  0.7    37.51   33.82    40.87 interpolated
+     mod   Potential  0.5   151.64  146.31   156.32 interpolated
+     mod Recognition  0.6   114.31  110.88   118.01 interpolated
+     mod    Reliable  0.7    82.88   80.79    85.10 interpolated
+      tv   Potential  0.5   181.12  179.46   182.00 interpolated
+      tv Recognition  0.6   147.36  145.37   148.38 interpolated
+      tv    Reliable  0.7    86.92   81.67    89.26 interpolated
+
+[Missingness partial-identification bounds]
+CallType      Scenario       Level  tau  Range_m       Status   R2  Reliable              Method
+    flat complete_case   Potential  0.5    90.85 interpolated 0.88      True Isotonic (monotone)
+    flat complete_case Recognition  0.6    64.07 interpolated 0.88      True Isotonic (monotone)
+    flat complete_case    Reliable  0.7    37.51 interpolated 0.88      True Isotonic (monotone)
+    flat    worst_case   Potential  0.5    64.06 interpolated 0.76      True Isotonic (monotone)
+    flat    worst_case Recognition  0.6    47.75 interpolated 0.76      True Isotonic (monotone)
+    flat    worst_case    Reliable  0.7    31.53 interpolated 0.76      True Isotonic (monotone)
+    flat     best_case   Potential  0.5   132.31 interpolated 0.65      True Isotonic (monotone)
+    flat     best_case Recognition  0.6    91.34 interpolated 0.65      True Isotonic (monotone)
+    flat     best_case    Reliable  0.7    47.22 interpolated 0.65      True Isotonic (monotone)
+     mod complete_case   Potential  0.5   151.64 interpolated 0.89      True Isotonic (monotone)
+     mod complete_case Recognition  0.6   114.31 interpolated 0.89      True Isotonic (monotone)
+     mod complete_case    Reliable  0.7    82.88 interpolated 0.89      True Isotonic (monotone)
+     mod    worst_case   Potential  0.5   113.91 interpolated 0.78      True Isotonic (monotone)
+     mod    worst_case Recognition  0.6    94.72 interpolated 0.78      True Isotonic (monotone)
+     mod    worst_case    Reliable  0.7    75.53 interpolated 0.78      True Isotonic (monotone)
+     mod     best_case   Potential  0.5   178.04 interpolated 0.79      True Isotonic (monotone)
+     mod     best_case Recognition  0.6   146.75 interpolated 0.79      True Isotonic (monotone)
+     mod     best_case    Reliable  0.7   102.40 interpolated 0.79      True Isotonic (monotone)
+      tv complete_case   Potential  0.5   181.12 interpolated 0.85      True Isotonic (monotone)
+      tv complete_case Recognition  0.6   147.36 interpolated 0.85      True Isotonic (monotone)
+      tv complete_case    Reliable  0.7    86.92 interpolated 0.85      True Isotonic (monotone)
+      tv    worst_case   Potential  0.5   108.21 interpolated 0.58     False Isotonic (monotone)
+      tv    worst_case Recognition  0.6    84.57 interpolated 0.58     False Isotonic (monotone)
+      tv    worst_case    Reliable  0.7    17.09 interpolated 0.58     False Isotonic (monotone)
+      tv     best_case   Potential  0.5   253.36 interpolated 0.26     False Isotonic (monotone)
+      tv     best_case Recognition  0.6   202.77 interpolated 0.26     False Isotonic (monotone)
+      tv     best_case    Reliable  0.7   152.18 interpolated 0.26     False Isotonic (monotone)
+
+[Probabilistic range R_tau(p)]
+CallType  tau  p_level  Range_m       Status  CI_Low  CI_High  Bracket_Low  Bracket_High     Bracket_Status  N_Empirical_Crossings  Interval_Censored  Model_Inside_Bracket            Recommended  N_common  N_boot_valid                           Method
+    flat  0.5     0.50    84.40 interpolated   81.20    87.24         64.0         128.0    single_crossing                      1               True                  True bracket (model inside)       230           500 Monotone logistic (common-trial)
+    flat  0.5     0.75    66.15 interpolated   63.77    68.25         64.0         128.0    single_crossing                      1               True                  True bracket (model inside)       230           500 Monotone logistic (common-trial)
+    flat  0.5     0.90    51.84 interpolated   50.09    53.40         32.0          64.0    single_crossing                      1               True                  True bracket (model inside)       230           500 Monotone logistic (common-trial)
+    flat  0.7     0.50    28.29 interpolated   25.60    30.85         32.0          64.0    single_crossing                      1               True                 False                bracket       230           500 Monotone logistic (common-trial)
+    flat  0.7     0.75    15.59 interpolated   13.50    17.91          4.0          32.0 multiple_crossings                      3               True                  True bracket (model inside)       230           500 Monotone logistic (common-trial)
+    flat  0.7     0.90     8.59 interpolated    7.05    10.37          4.0          32.0 multiple_crossings                      3               True                  True bracket (model inside)       230           500 Monotone logistic (common-trial)
+     mod  0.5     0.50   138.65 interpolated  132.81   144.56        128.0         256.0    single_crossing                      1               True                  True bracket (model inside)       230           500 Monotone logistic (common-trial)
+     mod  0.5     0.75   105.75 interpolated  101.53   110.00         64.0         128.0    single_crossing                      1               True                  True bracket (model inside)       230           500 Monotone logistic (common-trial)
+     mod  0.5     0.90    80.65 interpolated   77.62    83.70         64.0         128.0    single_crossing                      1               True                  True bracket (model inside)       230           500 Monotone logistic (common-trial)
+     mod  0.7     0.50    61.26 interpolated   56.11    66.30         64.0         128.0    single_crossing                      1               True                 False                bracket       230           500 Monotone logistic (common-trial)
+     mod  0.7     0.75    31.66 interpolated   27.81    35.46         64.0         128.0    single_crossing                      1               True                 False                bracket       230           500 Monotone logistic (common-trial)
+     mod  0.7     0.90    16.37 interpolated   13.62    19.47          8.0          16.0    single_crossing                      1               True                 False                bracket       230           500 Monotone logistic (common-trial)
+      tv  0.5     0.50   179.31 interpolated  179.31   179.31        128.0         256.0    single_crossing                      1               True                  True bracket (model inside)       180           500 Monotone logistic (common-trial)
+      tv  0.5     0.75   134.84 interpolated  134.84   134.84        128.0         256.0    single_crossing                      1               True                  True bracket (model inside)       180           500 Monotone logistic (common-trial)
+      tv  0.5     0.90   101.39 interpolated  101.39   101.39        128.0         256.0    single_crossing                      1               True                 False                bracket       180           500 Monotone logistic (common-trial)
+      tv  0.7     0.50    45.03 interpolated   39.63    51.53          8.0         128.0 multiple_crossings                      3               True                  True bracket (model inside)       180           500 Monotone logistic (common-trial)
+      tv  0.7     0.75    13.86 interpolated   10.86    17.61          8.0         128.0 multiple_crossings                      3               True                  True bracket (model inside)       180           500 Monotone logistic (common-trial)
+      tv  0.7     0.90     4.27 interpolated    0.00     6.23          4.0         128.0 multiple_crossings                      4               True                  True bracket (model inside)       180           500 Monotone logistic (common-trial)
+
+[Threshold crossover tv vs mod]
+        Model  tau_star  Range_star  tau_star_CI_Low  tau_star_CI_High  Range_star_CI_Low  Range_star_CI_High  Status  N_boot_valid
+Main isotonic     0.706      80.928            0.697             0.713             77.344              85.422 crossed          1000
+
+==============================================================================
+STEP 5: METRIC-SPECIFIC AND SENSITIVITY ANALYSES
+==============================================================================
+
+[metric-specific sensitivity]
+CallType             Metric  tau  Range_m       Status              Method               Interpretation
+    flat        Spectrogram  0.5   110.47 interpolated Isotonic (monotone)                             
+    flat        Spectrogram  0.7    70.66 interpolated Isotonic (monotone)                             
+    flat Amplitude spectrum  0.5   116.37 interpolated Isotonic (monotone)                             
+    flat Amplitude spectrum  0.7    66.87 interpolated Isotonic (monotone)                             
+    flat           Envelope  0.5    37.05 interpolated Isotonic (monotone)                             
+    flat           Envelope  0.7     0.00     below_4m Isotonic (monotone) threshold not reached at 4 m
+     mod        Spectrogram  0.5   168.97 interpolated Isotonic (monotone)                             
+     mod        Spectrogram  0.7   104.15 interpolated Isotonic (monotone)                             
+     mod Amplitude spectrum  0.5   185.24 interpolated Isotonic (monotone)                             
+     mod Amplitude spectrum  0.7   120.37 interpolated Isotonic (monotone)                             
+     mod           Envelope  0.5    87.39 interpolated Isotonic (monotone)                             
+     mod           Envelope  0.7     9.98 interpolated Isotonic (monotone)                             
+      tv        Spectrogram  0.5   200.77 interpolated Isotonic (monotone)                             
+      tv        Spectrogram  0.7   140.23 interpolated Isotonic (monotone)                             
+      tv Amplitude spectrum  0.5   214.79 interpolated Isotonic (monotone)                             
+      tv Amplitude spectrum  0.7   150.91 interpolated Isotonic (monotone)                             
+      tv           Envelope  0.5    86.79 interpolated Isotonic (monotone)                             
+      tv           Envelope  0.7     0.00     below_4m Isotonic (monotone) threshold not reached at 4 m
+
+[weighted fit sensitivity]
+CallType                 Fit  tau  Range_m       Status
+    flat   Weighted isotonic  0.5    90.85 interpolated
+    flat   Weighted isotonic  0.7    37.51 interpolated
+    flat Unweighted isotonic  0.5    90.85 interpolated
+    flat Unweighted isotonic  0.7    37.51 interpolated
+     mod   Weighted isotonic  0.5   151.64 interpolated
+     mod   Weighted isotonic  0.7    82.74 interpolated
+     mod Unweighted isotonic  0.5   151.64 interpolated
+     mod Unweighted isotonic  0.7    82.88 interpolated
+      tv   Weighted isotonic  0.5   181.12 interpolated
+      tv   Weighted isotonic  0.7    93.45 interpolated
+      tv Unweighted isotonic  0.5   181.12 interpolated
+      tv Unweighted isotonic  0.7    86.92 interpolated
+
+[GAM knots sensitivity]
+CallType  n_knots  tau  Range_m       Status
+    flat        4  0.5    84.11 interpolated
+    flat        4  0.7    39.98 interpolated
+    flat        5  0.5    90.95 interpolated
+    flat        5  0.7    36.45 interpolated
+    flat        6  0.5    93.04 interpolated
+    flat        6  0.7    36.36 interpolated
+     mod        4  0.5   149.08 interpolated
+     mod        4  0.7    84.42 interpolated
+     mod        5  0.5   141.73 interpolated
+     mod        5  0.7    93.05 interpolated
+     mod        6  0.5   141.36 interpolated
+     mod        6  0.7    92.64 interpolated
+      tv        4  0.5   184.61 interpolated
+      tv        4  0.7   108.76 interpolated
+      tv        5  0.5   183.92 interpolated
+      tv        5  0.7   109.37 interpolated
+      tv        6  0.5   168.79 interpolated
+      tv        6  0.7   116.08 interpolated
+
+[fusion sensitivity]
+CallType    Fusion  tau  Range_m       Status
+    flat       PCA  0.5    90.85 interpolated
+    flat       PCA  0.7    37.51 interpolated
+    flat     Equal  0.5    89.90 interpolated
+    flat     Equal  0.7    36.64 interpolated
+    flat   Entropy  0.5    80.33 interpolated
+    flat   Entropy  0.7    30.12 interpolated
+    flat Geometric  0.5    82.04 interpolated
+    flat Geometric  0.7    31.32 interpolated
+     mod       PCA  0.5   151.64 interpolated
+     mod       PCA  0.7    82.88 interpolated
+     mod     Equal  0.5   150.47 interpolated
+     mod     Equal  0.7    81.91 interpolated
+     mod   Entropy  0.5   138.30 interpolated
+     mod   Entropy  0.7    72.97 interpolated
+     mod Geometric  0.5   142.87 interpolated
+     mod Geometric  0.7    78.15 interpolated
+      tv       PCA  0.5   181.12 interpolated
+      tv       PCA  0.7    86.92 interpolated
+      tv     Equal  0.5   180.10 interpolated
+      tv     Equal  0.7    83.71 interpolated
+      tv   Entropy  0.5   170.23 interpolated
+      tv   Entropy  0.7    14.79 interpolated
+      tv Geometric  0.5   174.22 interpolated
+      tv Geometric  0.7    71.87 interpolated
+
+==============================================================================
+STEP 6: ROBUSTNESS, PAIRWISE DIFFERENCES, PLAYBACK CALIBRATION
+==============================================================================
+CallType  d50_model_avg  d50_min_all  d50_max_all  d70_model_avg  d70_min_all  d70_max_all  d50_logistic  d70_logistic  AUC_log  Rank_d70
+      tv         182.60       155.06       183.92         102.23        29.49       116.58        181.12         86.92     0.70         1
+     mod         145.46       128.86       152.56          88.38        44.58        93.05        151.64         82.88     0.71         2
+    flat          89.73        77.67       104.15          35.45        28.83        40.84         90.85         37.51     0.64         3
+Comparison  tau  Diff_m  CI_Low  CI_High  P_diff_gt_0  N_boot
+ tv - flat  0.5  89.777  87.555   91.700        1.000    1000
+  tv - mod  0.5  29.350  24.711   34.318        1.000    1000
+mod - flat  0.5  60.427  56.222   64.653        1.000    1000
+ tv - flat  0.7  48.151  42.344   53.645        1.000    1000
+  tv - mod  0.7   2.963  -1.914    7.439        0.894    1000
+mod - flat  0.7  45.189  42.714   48.183        1.000    1000
+ Group   F_bin  F_mid  N  Response_rate
+pooled 0.0-0.4   0.20  4          0.750
+pooled 0.4-0.5   0.45 18          0.722
+pooled 0.5-0.6   0.55 19          0.632
+pooled 0.6-0.7   0.65 29          0.414
+pooled 0.7-0.8   0.75 65          0.708
+pooled 0.8-1.0   0.90  4          1.000
+  flat 0.0-0.4   0.20  4          0.750
+  flat 0.4-0.5   0.45 14          0.643
+  flat 0.5-0.6   0.55 12          0.583
+  flat 0.6-0.7   0.65 13          0.385
+  flat 0.7-0.8   0.75  2          1.000
+  flat 0.8-1.0   0.90  3          1.000
+   mod 0.5-0.6   0.55  5          0.600
+   mod 0.6-0.7   0.65  5          0.000
+   mod 0.7-0.8   0.75 22          0.773
+   mod 0.8-1.0   0.90  1          1.000
+    tv 0.4-0.5   0.45  4          1.000
+    tv 0.5-0.6   0.55  2          1.000
+    tv 0.6-0.7   0.65 11          0.636
+    tv 0.7-0.8   0.75 41          0.659
+
+==============================================================================
+ANSWER SUMMARY
+==============================================================================
+Robustness at τ=0.70 (model-averaged d70 and model spread):
+    tv: d50= 182.6 m, d70= 102.2 m; eligible [86.9,109.4], all [29.5,116.6], AUC_log=0.699
+   mod: d50= 145.5 m, d70=  88.4 m; eligible [82.9,93.0], all [44.6,93.0], AUC_log=0.713
+  flat: d50=  89.7 m, d70=  35.5 m; eligible [28.8,40.8], all [28.8,40.8], AUC_log=0.637
+  Crossover tv–mod: τ*=0.706, R*=80.9 m
+  Raw monotonicity violations: flat=1, mod=2, tv=3
+  Note: d70 and AUC can rank tv/mod differently; use the model intervals, not a single rank.
+
+All outputs saved to ./outputs_p2/

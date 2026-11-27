@@ -1,0 +1,2 @@
+﻿Model,tau_star,Range_star,tau_star_CI_Low,tau_star_CI_High,Range_star_CI_Low,Range_star_CI_High,Status,N_boot_valid
+Main isotonic,0.7062283285861218,80.92753518346828,0.6971993717597194,0.7127108398750451,77.34448787731141,85.42187969661178,crossed,1000

@@ -1,0 +1,37 @@
+﻿CallType,Model,Parameter,Estimate,CI_Low,CI_High,Boundary,Description
+flat,Logistic,a,0.8239214564989945,,,False,upper asymptote (logistic)
+flat,Logistic,c,0.04554157355714687,,,False,linear excess absorption / logistic floor
+flat,Logistic,d0,103.95453186926032,,,False,half-decay distance (logistic)
+flat,Logistic,b,1.7813178548690907,,,False,log-distance loss / power exponent / logistic steepness
+flat,Physical log-exp,F4,0.8515064731277889,,,False,fitted fidelity at 4 m (within the observed range)
+flat,Physical log-exp,b,0.044969571594140806,,,False,log-distance loss / power exponent / logistic steepness
+flat,Physical log-exp,c,0.0020462440409404373,,,False,linear excess absorption / logistic floor
+flat,Physical power-exp,F4,0.8454360116843084,,,True,fitted fidelity at 4 m (within the observed range)
+flat,Physical power-exp,b,2.7852208037801037e-19,,,True,log-distance loss / power exponent / logistic steepness
+flat,Physical power-exp,c,0.006235848577717809,,,True,linear excess absorption / logistic floor
+flat,Weibull,lambda,134.19076271843275,,,False,scale distance (Weibull)
+flat,Weibull,k,0.6703553588507946,,,False,shape parameter (Weibull)
+mod,Logistic,a,0.8107469695780263,,,True,upper asymptote (logistic)
+mod,Logistic,c,2.9930054576589794e-10,,,True,linear excess absorption / logistic floor
+mod,Logistic,d0,181.54190509797996,,,True,half-decay distance (logistic)
+mod,Logistic,b,2.3442128299234346,,,True,log-distance loss / power exponent / logistic steepness
+mod,Physical log-exp,F4,0.8405205963977305,,,True,fitted fidelity at 4 m (within the observed range)
+mod,Physical log-exp,b,1.4134497749196078e-11,,,True,log-distance loss / power exponent / logistic steepness
+mod,Physical log-exp,c,0.002292036663587353,,,True,linear excess absorption / logistic floor
+mod,Physical power-exp,F4,0.8552463443116265,,,True,fitted fidelity at 4 m (within the observed range)
+mod,Physical power-exp,b,9.527540086318371e-19,,,True,log-distance loss / power exponent / logistic steepness
+mod,Physical power-exp,c,0.003975284286174406,,,True,linear excess absorption / logistic floor
+mod,Weibull,lambda,231.42151831626245,,,False,scale distance (Weibull)
+mod,Weibull,k,0.6259292377626725,,,False,shape parameter (Weibull)
+tv,Logistic,a,0.7472470347561907,,,True,upper asymptote (logistic)
+tv,Logistic,c,0.27034932631532116,,,True,linear excess absorption / logistic floor
+tv,Logistic,d0,153.63996480970638,,,True,half-decay distance (logistic)
+tv,Logistic,b,7.999999999999999,,,True,log-distance loss / power exponent / logistic steepness
+tv,Physical log-exp,F4,0.7871021612713243,,,True,fitted fidelity at 4 m (within the observed range)
+tv,Physical log-exp,b,7.67612689665124e-18,,,True,log-distance loss / power exponent / logistic steepness
+tv,Physical log-exp,c,0.0017866635771399,,,True,linear excess absorption / logistic floor
+tv,Physical power-exp,F4,0.7903156665088504,,,True,fitted fidelity at 4 m (within the observed range)
+tv,Physical power-exp,b,3.0855282098194185e-16,,,True,log-distance loss / power exponent / logistic steepness
+tv,Physical power-exp,c,0.0028623526106799054,,,True,linear excess absorption / logistic floor
+tv,Weibull,lambda,489.87193666850055,,,False,scale distance (Weibull)
+tv,Weibull,k,0.36684966556364706,,,False,shape parameter (Weibull)

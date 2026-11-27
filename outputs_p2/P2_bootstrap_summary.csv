@@ -1,0 +1,4 @@
+﻿CallType,MainModel,N_requested,N_valid,N_failed
+flat,Isotonic (monotone),1000,1000,0
+mod,Isotonic (monotone),1000,1000,0
+tv,Isotonic (monotone),1000,1000,0

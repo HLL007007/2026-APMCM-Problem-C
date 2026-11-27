@@ -1,0 +1,13 @@
+﻿CallType,Fit,tau,Range_m,Status
+flat,Weighted isotonic,0.5,90.85197921862688,interpolated
+flat,Weighted isotonic,0.7,37.508973358662644,interpolated
+flat,Unweighted isotonic,0.5,90.85197921862712,interpolated
+flat,Unweighted isotonic,0.7,37.508973358662296,interpolated
+mod,Weighted isotonic,0.5,151.63815907721397,interpolated
+mod,Weighted isotonic,0.7,82.73979027605942,interpolated
+mod,Unweighted isotonic,0.5,151.6381590772148,interpolated
+mod,Unweighted isotonic,0.7,82.88476652235352,interpolated
+tv,Weighted isotonic,0.5,181.12368068514084,interpolated
+tv,Weighted isotonic,0.7,93.44939504354842,interpolated
+tv,Unweighted isotonic,0.5,181.12368068514115,interpolated
+tv,Unweighted isotonic,0.7,86.92392195814945,interpolated

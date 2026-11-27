@@ -1,0 +1,15 @@
+﻿Column,Description,Unit_Type
+TrialID,Trial/row index within a call type,integer
+CallType,flat / mod / tv,category
+Distance,Propagation distance,m
+r_spec,Spectrogram correlation with 1 m reference,correlation
+r_amp,Amplitude-spectrum correlation with 1 m reference,correlation
+r_env,Amplitude-envelope correlation with 1 m reference,correlation
+r_*_pos,"r_* clipped to [0,1] for fusion",correlation
+n_metrics,Number of available metrics for the trial-distance,count
+F_main,"PCA-weighted linear fidelity, available metrics (main)","index [0,1]"
+F_equal,Equal-weight linear fidelity,"index [0,1]"
+F_entropy,Entropy-weight linear fidelity,"index [0,1]"
+F_geo,Weighted geometric fidelity (short-board penalty),"index [0,1]"
+F_worst,Fidelity with missing metrics imputed as 0 (lower bound),"index [0,1]"
+F_best,Fidelity with missing metrics imputed as 1 (upper bound),"index [0,1]"

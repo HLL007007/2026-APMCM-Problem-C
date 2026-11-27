@@ -1,0 +1,160 @@
+Problem 2 v2.1 -- key results
+Environment: Python 3.12.7, numpy 1.26.4, pandas 3.0.1, sklearn 1.5.1, seaborn 0.13.2
+Mode: FULL (N_BOOT=1000)
+
+Data, missingness and monotonicity:
+  flat: 300 trials; F_main valid=1960/2100; raw monotonicity violations=1, max upward jump=0.041, RMSE(raw vs isotonic)=0.0110
+  mod: 300 trials; F_main valid=2030/2100; raw monotonicity violations=2, max upward jump=0.053, RMSE(raw vs isotonic)=0.0152
+  tv: 300 trials; F_main valid=1860/2100; raw monotonicity violations=3, max upward jump=0.040, RMSE(raw vs isotonic)=0.0184
+  The raw distance trend is NOT monotone; all range estimates below use the isotonic monotone envelope as the robust main model.
+
+Fusion (PCA, main):
+  Spectrogram: weight=0.338
+  Amplitude spectrum: weight=0.340
+  Envelope: weight=0.322
+  PC1 explains 92.3% of standardised metric variance.
+
+Main model per call type (isotonic monotone envelope preferred):
+  flat: Isotonic (monotone), CV-RMSE=0.087, R2=0.881, boundary=False
+  mod: Isotonic (monotone), CV-RMSE=0.069, R2=0.893, boundary=False
+  tv: Isotonic (monotone), CV-RMSE=0.063, R2=0.850, boundary=False
+
+Model-averaging weights (eligible models only; ineligible = 0):
+  flat: Isotonic (monotone)=0.22, Physical log-exp=0.18, Logistic=0.21, Weibull=0.16, GAM spline=0.22
+  mod: Isotonic (monotone)=0.49, GAM spline=0.51
+  tv: Isotonic (monotone)=0.48, GAM spline=0.52
+
+Main isotonic effective range (bootstrap 95% CI):
+  flat | Potential (τ=0.50): 90.9 m [89.1, 92.9] (interpolated)
+  flat | Recognition (τ=0.60): 64.1 m [62.1, 66.4] (interpolated)
+  flat | Reliable (τ=0.70): 37.5 m [33.8, 40.9] (interpolated)
+  mod | Potential (τ=0.50): 151.6 m [146.3, 156.3] (interpolated)
+  mod | Recognition (τ=0.60): 114.3 m [110.9, 118.0] (interpolated)
+  mod | Reliable (τ=0.70): 82.9 m [80.8, 85.1] (interpolated)
+  tv | Potential (τ=0.50): 181.1 m [179.5, 182.0] (interpolated)
+  tv | Recognition (τ=0.60): 147.4 m [145.4, 148.4] (interpolated)
+  tv | Reliable (τ=0.70): 86.9 m [81.7, 89.3] (interpolated)
+
+Model-averaged range and model spread:
+  flat τ=0.50: avg=89.7 m; eligible [77.7, 104.1]; all models [77.7, 104.1]
+  flat τ=0.70: avg=35.5 m; eligible [28.8, 40.8]; all models [28.8, 40.8]
+  mod τ=0.50: avg=145.5 m; eligible [141.7, 151.6]; all models [128.9, 152.6]
+  mod τ=0.70: avg=88.4 m; eligible [82.9, 93.0]; all models [44.6, 93.0]
+  tv τ=0.50: avg=182.6 m; eligible [181.1, 183.9]; all models [155.1, 183.9]
+  tv τ=0.70: avg=102.2 m; eligible [86.9, 109.4]; all models [29.5, 116.6]
+  Use the eligible interval for model-choice uncertainty; the all-model interval includes boundary/poor-fit models and is an extreme scenario.
+
+Partial-identification bounds under informative missingness (isotonic; Reliable = R2>=0.60):
+  flat | complete_case τ=0.70: 37.5 m (R2=0.881)
+  flat | worst_case τ=0.70: 31.5 m (R2=0.761)
+  flat | best_case τ=0.70: 47.2 m (R2=0.646)
+  mod | complete_case τ=0.70: 82.9 m (R2=0.893)
+  mod | worst_case τ=0.70: 75.5 m (R2=0.785)
+  mod | best_case τ=0.70: 102.4 m (R2=0.791)
+  tv | complete_case τ=0.70: 86.9 m (R2=0.850)
+  tv | worst_case τ=0.70: 17.1 m (R2=0.581)  [UNRELIABLE FIT]
+  tv | best_case τ=0.70: 152.2 m (R2=0.262)  [UNRELIABLE FIT]
+  Do not treat an UNRELIABLE FIT as a credible bound; it is an extreme-scenario extrapolation.
+  tv: missingness bounds NOT IDENTIFIED under MNAR (no reliable worst/best fit); the complete-case value is optimistic and should be labelled as such.
+
+Probabilistic range R_tau(p), common trials + monotone logistic:
+  flat | τ=0.50 | p=0.50: 84.4 m [81.2, 87.2]; bracket [64, 128] (single_crossing; N_cross=1) [interval-censored] (N_common=230; recommended=bracket (model inside))
+  flat | τ=0.50 | p=0.75: 66.1 m [63.8, 68.3]; bracket [64, 128] (single_crossing; N_cross=1) [interval-censored] (N_common=230; recommended=bracket (model inside))
+  flat | τ=0.50 | p=0.90: 51.8 m [50.1, 53.4]; bracket [32, 64] (single_crossing; N_cross=1) [interval-censored] (N_common=230; recommended=bracket (model inside))
+  flat | τ=0.70 | p=0.50: 28.3 m [25.6, 30.8]; bracket [32, 64] (single_crossing; N_cross=1) [MODEL POINT OUTSIDE BRACKET] [interval-censored] (N_common=230; recommended=bracket)
+  flat | τ=0.70 | p=0.75: 15.6 m [13.5, 17.9]; bracket [4, 32] (multiple_crossings; N_cross=3) [interval-censored] (N_common=230; recommended=bracket (model inside))
+  flat | τ=0.70 | p=0.90: 8.6 m [7.1, 10.4]; bracket [4, 32] (multiple_crossings; N_cross=3) [interval-censored] (N_common=230; recommended=bracket (model inside))
+  mod | τ=0.50 | p=0.50: 138.7 m [132.8, 144.6]; bracket [128, 256] (single_crossing; N_cross=1) [interval-censored] (N_common=230; recommended=bracket (model inside))
+  mod | τ=0.50 | p=0.75: 105.7 m [101.5, 110.0]; bracket [64, 128] (single_crossing; N_cross=1) [interval-censored] (N_common=230; recommended=bracket (model inside))
+  mod | τ=0.50 | p=0.90: 80.7 m [77.6, 83.7]; bracket [64, 128] (single_crossing; N_cross=1) [interval-censored] (N_common=230; recommended=bracket (model inside))
+  mod | τ=0.70 | p=0.50: 61.3 m [56.1, 66.3]; bracket [64, 128] (single_crossing; N_cross=1) [MODEL POINT OUTSIDE BRACKET] [interval-censored] (N_common=230; recommended=bracket)
+  mod | τ=0.70 | p=0.75: 31.7 m [27.8, 35.5]; bracket [64, 128] (single_crossing; N_cross=1) [MODEL POINT OUTSIDE BRACKET] [interval-censored] (N_common=230; recommended=bracket)
+  mod | τ=0.70 | p=0.90: 16.4 m [13.6, 19.5]; bracket [8, 16] (single_crossing; N_cross=1) [MODEL POINT OUTSIDE BRACKET] [interval-censored] (N_common=230; recommended=bracket)
+  tv | τ=0.50 | p=0.50: 179.3 m [179.3, 179.3]; bracket [128, 256] (single_crossing; N_cross=1) [interval-censored] (N_common=180; recommended=bracket (model inside))
+  tv | τ=0.50 | p=0.75: 134.8 m [134.8, 134.8]; bracket [128, 256] (single_crossing; N_cross=1) [interval-censored] (N_common=180; recommended=bracket (model inside))
+  tv | τ=0.50 | p=0.90: 101.4 m [101.4, 101.4]; bracket [128, 256] (single_crossing; N_cross=1) [MODEL POINT OUTSIDE BRACKET] [interval-censored] (N_common=180; recommended=bracket)
+  tv | τ=0.70 | p=0.50: 45.0 m [39.6, 51.5]; bracket [8, 128] (multiple_crossings; N_cross=3) [interval-censored] (N_common=180; recommended=bracket (model inside))
+  tv | τ=0.70 | p=0.75: 13.9 m [10.9, 17.6]; bracket [8, 128] (multiple_crossings; N_cross=3) [interval-censored] (N_common=180; recommended=bracket (model inside))
+  tv | τ=0.70 | p=0.90: 4.3 m [0.0, 6.2]; bracket [4, 128] (multiple_crossings; N_cross=4) [interval-censored] (N_common=180; recommended=bracket (model inside))
+  5 row(s) have MODEL POINT OUTSIDE BRACKET; quote the bracket only (the logistic is a smooth interpolation, not an identified value).
+  The bracket is the nonparametric identification interval from the empirical crossings. A zero-width CI means the model sees the same all-above/all-below pattern in every bootstrap; it is NOT a precise range. Use the bracket as the honest uncertainty statement.
+  The probability is a smooth monotone logistic on log-distance; this reduces the isotonic step artifact. Where the data are all-above/all-below between adjacent distances (e.g. tv at τ=0.50), the model CI can still be zero-width; use the bracket, not the CI.
+  p=0.90 is an individual-level guarantee: if it is very short or 0, fewer than 90% of trials reach tau even near the source. Report p=0.50/0.75 as the main ecological range and p=0.90 as a strict bound.
+
+Threshold-dependent dominance (isotonic main model):
+  τ*=0.706 [0.697, 0.713], R*=80.9 m [77.3, 85.4]
+  A crossing means the tv/mod ranking is threshold-dependent; report both regimes rather than a single winner.
+  At τ=0.70 the tv-mod difference CI includes 0; treat tv and mod as indistinguishable at the reliable threshold even though the fitted curves cross at τ*.
+
+Metric-specific ranges (τ=0.70):
+  flat: Spectrogram=71 m, Amplitude spectrum=67 m, Envelope=not reached at 4 m
+  mod: Spectrogram=104 m, Amplitude spectrum=120 m, Envelope=10 m
+  tv: Spectrogram=140 m, Amplitude spectrum=151 m, Envelope=not reached at 4 m
+  The envelope channel cannot reach 0.70 at 4 m. The composite 0.70 range is therefore a compensatory average and can be SHORTER than the spectrogram/amplitude ranges; this is a short-board effect, not a bug.
+
+Sensitivity checks:
+  Weighted vs unweighted isotonic (τ=0.70):
+    flat: Weighted isotonic=38 m, Unweighted isotonic=38 m
+    mod: Weighted isotonic=83 m, Unweighted isotonic=83 m
+    tv: Weighted isotonic=93 m, Unweighted isotonic=87 m
+  GAM knots (τ=0.70):
+    flat: k=4=40 m, k=5=36 m, k=6=36 m
+    mod: k=4=84 m, k=5=93 m, k=6=93 m
+    tv: k=4=109 m, k=5=109 m, k=6=116 m
+  Fusion methods (τ=0.70):
+    flat: PCA=38 m, Equal=37 m, Entropy=30 m, Geometric=31 m
+    mod: PCA=83 m, Equal=82 m, Entropy=73 m, Geometric=78 m
+    tv: PCA=87 m, Equal=84 m, Entropy=15 m, Geometric=72 m
+  The tv high-threshold range is fusion-dependent; entropy/geometric are more conservative because they weight the weak envelope channel more heavily.
+
+Playback check (descriptive only; no calibrated threshold):
+  F bin 0.4-0.5: response=0.72 (N=18)
+  F bin 0.5-0.6: response=0.63 (N=19)
+  F bin 0.6-0.7: response=0.41 (N=29)
+  F bin 0.7-0.8: response=0.71 (N=65)
+  Context/group size are confounded; the earlier adjusted-logistic threshold calibration was not identified, so Problem 3 owns the formal behavioural model.
+
+Robustness at τ=0.70 (model-averaged d70 and AUC):
+  tv: d70=102.2 m; eligible [86.9, 109.4]; all [29.5, 116.6], AUC_log=0.699
+  mod: d70=88.4 m; eligible [82.9, 93.0]; all [44.6, 93.0], AUC_log=0.713
+  flat: d70=35.5 m; eligible [28.8, 40.8]; all [28.8, 40.8], AUC_log=0.637
+  The d70 and AUC orderings can disagree; do not present a single rank when the model intervals overlap.
+
+Pairwise differences (main isotonic bootstrap; conditional on model):
+  τ=0.50 | tv - flat: 89.8 m [87.6, 91.7], P(diff>0)=1.000
+  τ=0.50 | tv - mod: 29.3 m [24.7, 34.3], P(diff>0)=1.000
+  τ=0.50 | mod - flat: 60.4 m [56.2, 64.7], P(diff>0)=1.000
+  τ=0.70 | tv - flat: 48.2 m [42.3, 53.6], P(diff>0)=1.000
+  τ=0.70 | tv - mod: 3.0 m [-1.9, 7.4], P(diff>0)=0.894
+  τ=0.70 | mod - flat: 45.2 m [42.7, 48.2], P(diff>0)=1.000
+
+Uncertainty decomposition at τ=0.70 (sorted by width):
+  flat:
+    Threshold ±0.05: [26.7, 50.8] (width 24.1 m)
+    Missingness (reliable worst-best): [31.5, 47.2] (width 15.7 m)
+    Model choice (eligible): [28.8, 40.8] (width 12.0 m)
+    Fusion method (min-max): [30.1, 37.5] (width 7.4 m)
+    Sampling (bootstrap CI): [33.8, 40.9] (width 7.0 m)
+  mod:
+    Threshold ±0.05: [67.2, 98.6] (width 31.4 m)
+    Missingness (reliable worst-best): [75.5, 102.4] (width 26.9 m)
+    Model choice (eligible): [82.9, 93.0] (width 10.2 m)
+    Fusion method (min-max): [73.0, 82.9] (width 9.9 m)
+    Sampling (bootstrap CI): [80.8, 85.1] (width 4.3 m)
+  tv:
+    Threshold ±0.05: [12.3, 130.5] (width 118.2 m)
+    Fusion method (min-max): [14.8, 86.9] (width 72.1 m)
+    Model choice (eligible): [86.9, 109.4] (width 22.4 m)
+    Sampling (bootstrap CI): [81.7, 89.3] (width 7.6 m)
+    Missingness (reliable worst-best): NOT IDENTIFIED
+  Sampling CIs are narrow; model choice / threshold / fusion / missingness dominate. This is why a single point estimate with a ±3 m CI is misleading.
+  Threshold sensitivity is large: tv ±0.05 spans 118.2 m; report the range-threshold curve, not a single d70.
+
+Honest conclusions:
+  1. The raw fidelity curves are non-monotonic; the isotonic envelope is the defensible monotone representation. The violations are reported above.
+  2. At τ=0.50: tv 182.6 m (eligible [181.1, 183.9]) vs mod 145.5 m (eligible [141.7, 151.6]); tv is above mod. At τ=0.70: tv 102.2 m (eligible [86.9, 109.4]) vs mod 88.4 m (eligible [82.9, 93.0]); intervals overlap. Flat is clearly lowest at both thresholds; do not rank tv/mod at τ=0.70.
+  3. The fitted isotonic curves cross at τ* (reported above). At τ=0.70 the tv-mod difference CI includes 0 unless stated otherwise, so treat tv and mod as indistinguishable at the reliable threshold.
+  4. Informative missingness can bias complete-case ranges upward; only bounds with Reliable=TRUE should be quoted as credible. For a call type with no reliable worst/best fit, the range is NOT IDENTIFIED under MNAR and the complete-case value is optimistic (tv is the clear example).
+  5. The mean-curve bootstrap CI is not an individual recognition interval; the common-trial bracket (with the monotone logistic as a smooth interpolation) is the appropriate probabilistic statement.
+  6. The envelope channel cannot reach 0.70 at 4 m; the composite 0.70 range is a compensatory average, not a channel-wise bottleneck.
+  7. p=0.90 is an individual-level guarantee. A short or zero p=0.90 range means fewer than 90% of trials reach tau even at 4 m; report p=0.50/0.75 as the main ecological range and p=0.90 as a strict bound.

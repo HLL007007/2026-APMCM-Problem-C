@@ -1,0 +1,10 @@
+﻿CallType,Metric,File,Rows,OutOfRangeCells,MissingCells
+flat,Spectrogram,Data03_correlation1m_flat_call_spectrogram.csv,300,0,140
+flat,Amplitude spectrum,Data06_correlation1m_flat_call_amplitude_spectrum.csv,300,0,140
+flat,Envelope,Data09_correlation1m_flat_call_envelope.csv,300,0,140
+mod,Spectrogram,Data04_correlation1m_modulated_call_spectrogram.csv,300,0,70
+mod,Amplitude spectrum,Data07_correlation1m_modulated_call_amplitude_spectrum.csv,300,0,70
+mod,Envelope,Data10_correlation1m_modulated_call_envelope.csv,300,0,70
+tv,Spectrogram,Data05_correlation1m_twovoice_call_spectrogram.csv,300,0,240
+tv,Amplitude spectrum,Data08_correlation1m_twovoice_call_amplitude_spectrum.csv,300,0,240
+tv,Envelope,Data11_correlation1m_twovoice_call_envelope.csv,300,0,240
