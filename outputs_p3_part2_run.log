@@ -1,0 +1,21 @@
+             model       endpoint  events  MAE_s  RMSE_s   NLL  coverage90
+      Separate AFT        Head-up      68  1.535   2.026 2.033       0.906
+      Separate AFT          Vocal      81  3.044   6.138 2.462       0.899
+      Separate AFT       Approach      23  5.897   7.489 3.530       0.843
+      Separate AFT First response     108  2.248   5.173 2.277       0.937
+Separate ridge AFT        Head-up      68  1.399   1.967 1.942       0.906
+Separate ridge AFT          Vocal      81  2.984   6.120 2.414       0.921
+Separate ridge AFT       Approach      23  5.532   7.790 3.260       0.878
+Separate ridge AFT First response     108  2.234   5.163 2.269       0.937
+        Shared AFT        Head-up      68  1.459   1.982 1.979       0.918
+        Shared AFT          Vocal      81  2.987   6.150 2.438       0.919
+        Shared AFT       Approach      23  5.403   6.857 3.254       0.922
+        Shared AFT First response     108  2.234   5.163 2.269       0.937
+ coupled         endpoint   n      abs   squared    MAE   RMSE
+   False ApproachDuration 115 1943.021 46835.027 16.896 20.181
+   False  HeadsUpDuration 340 3591.976 66343.210 10.565 13.969
+   False      VocalNcalls 405  910.845  4204.396  2.249  3.222
+    True ApproachDuration 115 1955.465 47988.896 17.004 20.428
+    True  HeadsUpDuration 340 3590.058 66264.432 10.559 13.960
+    True      VocalNcalls 405  912.767  4272.479  2.254  3.248
+Final penalty: 256.0 ; bootstrap replicates: 500

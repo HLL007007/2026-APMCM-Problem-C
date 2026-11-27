@@ -27,7 +27,7 @@ TYPES = occurrence.GROUP
 CONTEXTS = occurrence.CONTEXT
 DISTANCES = [50, 100, 150]
 MODELS = ["Separate AFT", "Separate ridge AFT", "Shared AFT"]
-POOL_GRID = [1., 4., 16., 64.]
+POOL_GRID = [1., 4., 16., 64., 256., 1024.]
 SEED = 20261128
 NODES, NODE_WEIGHTS = hermgauss(16)
 NODE_WEIGHTS /= np.sqrt(np.pi)
@@ -253,7 +253,7 @@ def scenarios(gate,model,mark_models,gx,context_weight,pre):
         below=(w*cdf).sum(axis=1)<.5
         lo=np.where(below,mid,lo);hi=np.where(below,hi,mid)
     time=np.where(zero>=.5,0,np.exp((lo+hi)/2))
-    intens=predict_marks(mark_models,x,pre,(mu,sd,zero),True).reshape(-1,3,3)
+    intens=predict_marks(mark_models,x,pre,(mu,sd,zero),False).reshape(-1,3,3)
     return time,(intens*w[:,:,:3]).sum(axis=1)
 
 
@@ -359,7 +359,7 @@ def run(reps):
     groups=df.expID.to_numpy()
     pre=np.log1p(df.VocalNcallsBefore.to_numpy(float))
     results,mark_results=validate(x,t,y,pre,groups)
-    lam=choose_penalty(x,t,groups,MODELS[-1],SEED+999)
+    lam=choose_penalty(x,t,groups,MODELS[1],SEED+999)
     grid=make_grid(df); gx=occurrence.design(grid)
     ctx=df.Context.value_counts(normalize=True).loc[CONTEXTS].to_numpy()
     # Fixed reference pre-playback vocal activity for the vocal intensity model.
@@ -367,8 +367,8 @@ def run(reps):
     states=df.state.to_numpy()
     def refit(idx):
         gate=occurrence.fit(gate_x[idx],states[idx],occurrence.MODELS[-1])
-        timing=fit_time(x[idx],t[idx],MODELS[-1],lam)
-        strength=fit_marks(x[idx],t[idx],y[idx],pre[idx],True)
+        timing=fit_time(x[idx],t[idx],MODELS[1],lam)
+        strength=fit_marks(x[idx],t[idx],y[idx],pre[idx],False)
         return scenarios(gate,timing,strength,gx,ctx,pre_grid)
     point=refit(np.arange(len(df)))
     rng=np.random.default_rng(SEED)
@@ -401,7 +401,7 @@ def run(reps):
     table_figure(tab,"Latency");table_figure(tab,"Intensity");table_figure(tab,"Latency",strict=True)
     validation_figure(results,t)
     save(pd.DataFrame([{"penalty":lam,"bootstrap_replicates":reps,"pairs_per_replicate":len(pairs),"seed":SEED,"group_size":df.Npenguins.median(),
-                        "before_calls":df.VocalNcallsBefore.median(),**df.Context.value_counts(normalize=True).to_dict()}]),"settings")
+                        "before_calls":df.VocalNcallsBefore.median(),"intensity_coupling":False,"main_timing_model":MODELS[1],**df.Context.value_counts(normalize=True).to_dict()}]),"settings")
     print(results.round(3).to_string(index=False))
     print(mark_results.round(3).to_string(index=False))
     print("Final penalty:",lam,"; bootstrap replicates:",reps,flush=True)

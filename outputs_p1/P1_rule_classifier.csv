@@ -1,0 +1,4 @@
+﻿CallType,Precision,Recall,F1,Support,Overall_Accuracy,Rule,Note
+flat,0.88,1.0,0.9361702127659575,44,0.9444444444444444,F02 present -> tv; else PulseRate present -> mod; else flat,Definitional rule based on measurement availability; it is not a learned acoustic classifier and should not be reported as such.
+mod,1.0,0.85,0.918918918918919,40,0.9444444444444444,F02 present -> tv; else PulseRate present -> mod; else flat,Definitional rule based on measurement availability; it is not a learned acoustic classifier and should not be reported as such.
+tv,1.0,1.0,1.0,24,0.9444444444444444,F02 present -> tv; else PulseRate present -> mod; else flat,Definitional rule based on measurement availability; it is not a learned acoustic classifier and should not be reported as such.

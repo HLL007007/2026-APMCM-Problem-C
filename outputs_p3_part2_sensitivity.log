@@ -1,0 +1,33 @@
+Behavior  Flagged_responses  Alt_responses  Nonresponse_with_latency  Nonresponse_with_positive_intensity
+ HeadsUp                 68             68                         0                                    0
+   Vocal                 81             85                         4                                    4
+Approach                 23             28                         5                                    0
+CallType         Endpoint  Intensity_mean_as_response  Intensity_mean_masked  Latency_median_s_as_response  Latency_median_s_masked  Latency_median_s_diff  Intensity_mean_diff
+ control         Approach                         NaN                    NaN                         8.041                    8.225                 -0.184                  NaN
+ control ApproachDuration                      32.929                 32.929                           NaN                      NaN                    NaN                0.000
+ control   First response                         NaN                    NaN                         2.291                    1.953                  0.338                  NaN
+ control          Head-up                         NaN                    NaN                         1.808                    1.808                  0.000                  NaN
+ control  HeadsUpDuration                      13.972                 13.972                           NaN                      NaN                    NaN                0.000
+ control            Vocal                         NaN                    NaN                         3.464                    3.363                  0.102                  NaN
+ control      VocalNcalls                       1.936                  1.987                           NaN                      NaN                    NaN               -0.051
+    flat         Approach                         NaN                    NaN                         8.060                    8.227                 -0.167                  NaN
+    flat ApproachDuration                      27.408                 27.408                           NaN                      NaN                    NaN                0.000
+    flat   First response                         NaN                    NaN                         2.091                    2.097                 -0.006                  NaN
+    flat          Head-up                         NaN                    NaN                         1.829                    1.829                  0.000                  NaN
+    flat  HeadsUpDuration                      17.144                 17.144                           NaN                      NaN                    NaN                0.000
+    flat            Vocal                         NaN                    NaN                         3.385                    3.317                  0.068                  NaN
+    flat      VocalNcalls                       2.638                  2.396                           NaN                      NaN                    NaN                0.242
+     mod         Approach                         NaN                    NaN                         8.033                    8.212                 -0.180                  NaN
+     mod ApproachDuration                      31.711                 31.711                           NaN                      NaN                    NaN                0.000
+     mod   First response                         NaN                    NaN                         1.945                    1.948                 -0.002                  NaN
+     mod          Head-up                         NaN                    NaN                         1.826                    1.826                  0.000                  NaN
+     mod  HeadsUpDuration                      23.066                 23.066                           NaN                      NaN                    NaN                0.000
+     mod            Vocal                         NaN                    NaN                         3.361                    3.291                  0.070                  NaN
+     mod      VocalNcalls                       4.263                  3.908                           NaN                      NaN                    NaN                0.355
+      tv         Approach                         NaN                    NaN                         8.029                    8.236                 -0.206                  NaN
+      tv ApproachDuration                      41.082                 41.082                           NaN                      NaN                    NaN                0.000
+      tv   First response                         NaN                    NaN                         2.812                    2.884                 -0.072                  NaN
+      tv          Head-up                         NaN                    NaN                         1.853                    1.853                  0.000                  NaN
+      tv  HeadsUpDuration                      22.948                 22.948                           NaN                      NaN                    NaN                0.000
+      tv            Vocal                         NaN                    NaN                         3.434                    3.377                  0.057                  NaN
+      tv      VocalNcalls                       2.710                  2.722                           NaN                      NaN                    NaN               -0.012

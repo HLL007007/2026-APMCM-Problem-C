@@ -1,0 +1,19 @@
+          Feature  MutualInfo  AUC_flat  AUC_mod  AUC_tv  AUC_max  KW_p_raw  KW_p_holm  KW_p_holm_date  EffectSize_eps2                             Status
+    HarmonicRatio       0.332     0.559    0.427   0.515    0.559     0.430      1.000           1.000            0.000       artifact (bimodal Fpeak/F01)
+              Q50       0.000     0.639    0.439   0.388    0.639     0.040      0.282           1.000            0.042      date-driven (not date-robust)
+              F01       0.139     0.620    0.519   0.307    0.620     0.010      0.083           0.021            0.068         date-robust discriminative
+      F02_present       0.503     0.312    0.324   1.000    1.000     0.000      0.000             NaN              NaN          definitional / structural
+PulseRate_present       0.463     0.078    0.778   0.714    0.778     0.000      0.000             NaN              NaN          definitional / structural
+            Fpeak       0.000     0.699    0.366   0.403    0.699     0.002      0.019           0.152            0.098 naive significant, not date-robust
+    SpecBandwidth       0.000     0.451    0.531   0.528    0.531     0.687      1.000           1.000            0.000           redundant with quartiles
+PeakAtFundamental       0.000     0.354    0.607   0.560    0.607     0.002      0.002             NaN              NaN                   regime indicator
+              Q25       0.000     0.577    0.476   0.425    0.577     0.340      1.000           1.000            0.001             weak / not significant
+         Duration       0.080     0.410    0.557   0.549    0.557     0.283      1.000           1.000            0.005             weak / not significant
+         SpecSkew       0.089     0.453    0.536   0.516    0.536     0.708      1.000           0.469            0.000             weak / not significant
+              Q75       0.000     0.517    0.518   0.452    0.518     0.771      1.000           1.000            0.000             weak / not significant
+
+Definitional rule accuracy: 0.9444
+CallType  Precision  Recall    F1  Support  Overall_Accuracy                                                        Rule                                                                                                                             Note
+    flat       0.88    1.00 0.936       44             0.944 F02 present -> tv; else PulseRate present -> mod; else flat Definitional rule based on measurement availability; it is not a learned acoustic classifier and should not be reported as such.
+     mod       1.00    0.85 0.919       40             0.944 F02 present -> tv; else PulseRate present -> mod; else flat Definitional rule based on measurement availability; it is not a learned acoustic classifier and should not be reported as such.
+      tv       1.00    1.00 1.000       24             0.944 F02 present -> tv; else PulseRate present -> mod; else flat Definitional rule based on measurement availability; it is not a learned acoustic classifier and should not be reported as such.

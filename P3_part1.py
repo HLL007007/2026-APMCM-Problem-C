@@ -15,7 +15,8 @@ import pandas as pd
 from scipy.optimize import minimize
 from scipy.special import expit, logsumexp
 from scipy.stats import binomtest
-import statsmodels.api as sm
+from statsmodels.genmod.families import Binomial
+from statsmodels.genmod.cov_struct import Exchangeable
 from statsmodels.stats.proportion import proportion_confint
 
 ROOT = Path(__file__).resolve().parent
@@ -32,6 +33,18 @@ REPS = 1500
 MODELS = ["Multinomial", "Hurdle additive", "Hurdle pairwise"]
 
 
+def holm_adjust(pvals):
+    p = np.asarray(pvals, dtype=float)
+    n = len(p)
+    order = np.argsort(p)
+    adj = np.empty(n)
+    running = 0.0
+    for rank, idx in enumerate(order):
+        running = max(running, (n - rank) * p[idx])
+        adj[idx] = min(1.0, running)
+    return adj
+
+
 def save(frame, name):
     frame.to_csv(OUT / (name + ".csv"), index=False, encoding="utf-8-sig")
 
@@ -45,6 +58,10 @@ def load():
     assert ((df[fields].sum(axis=1)>0) == df.ResponseYesNo).all()
     assert df[["Distance","Npenguins"]].gt(0).all().all()
     assert df.groupby(["expID","Type"]).size().unstack().eq(1).all().all()
+    # pandas 3.x returns Arrow-backed strings; patsy/statsmodels formulas need object dtype.
+    for c in ["CallType", "Context", "Type", "Date"]:
+        if c in df.columns:
+            df[c] = df[c].astype(object)
     lookup = {tuple(bits): i for i, bits in enumerate(BITS)}
     df["state"] = [lookup[tuple(row)] for row in df[fields].to_numpy()]
     return df.sort_values(["expID","Type"]).reset_index(drop=True)
@@ -164,8 +181,8 @@ def gee(df):
     d = df.assign(dist50=(df.Distance-100)/50,logsize=np.log2(df.Npenguins/8))
     model = smf.gee("ResponseYesNo ~ C(CallType, Treatment('control')) + "
                     "C(Context, Treatment('commuting')) + dist50 + logsize",
-                    groups="expID",data=d,family=sm.families.Binomial(),
-                    cov_struct=sm.cov_struct.Exchangeable()).fit()
+                    groups="expID",data=d,family=Binomial(),
+                    cov_struct=Exchangeable()).fit()
     assert model.converged
     bounds = np.exp(model.conf_int())
     results = pd.DataFrame({"term":model.params.index,"OR":np.exp(model.params).values,
@@ -182,8 +199,8 @@ def gee(df):
         + " + natural:dist50 + natural:logsize",
         data=d.assign(search=d.Context.eq("searching").astype(int),
                       afterfeeding=d.Context.eq("after").astype(int)),
-        groups="expID",family=sm.families.Binomial(),
-        cov_struct=sm.cov_struct.Exchangeable()).fit()
+        groups="expID",family=Binomial(),
+        cov_struct=Exchangeable()).fit()
     assert interaction_model.converged
     tests=[]
     for factor,terms in [("Context",["search","afterfeeding"]),("Distance",["dist50"]),
@@ -192,7 +209,7 @@ def gee(df):
         test=interaction_model.wald_test(np.eye(len(interaction_model.params))[idx],scalar=True)
         tests.append([factor,len(idx),float(test.statistic),float(test.pvalue)])
     tests=pd.DataFrame(tests,columns=["modifier","df","wald","p"])
-    tests["p_holm"]=sm.stats.multipletests(tests.p,method="holm")[1]
+    tests["p_holm"]=holm_adjust(tests.p)
     save(tests,"effect_modification")
     return results
 

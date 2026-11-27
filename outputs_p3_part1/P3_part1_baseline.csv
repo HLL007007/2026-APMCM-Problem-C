@@ -1,0 +1,5 @@
+﻿Model,LogLoss,Note
+Marginal state distribution (no-skill),1.2870099107066135,Global state frequencies from Data02
+Majority state (no-skill),0.4918226766403753,Degenerate baseline: zero probability for non-None states; not a usable probabilistic forecast
+"Hurdle pairwise (CV, expID)",1.1151466058090613,From P3_part1 validation.csv
+"Multinomial (CV, expID)",1.1614972834867465,From P3_part1 validation.csv

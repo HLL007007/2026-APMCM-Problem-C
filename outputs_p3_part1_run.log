@@ -1,0 +1,19 @@
+{
+  "pairs": 139,
+  "discordant": 76,
+  "mcnemar_p": 7.747704489416678e-20,
+  "paired_swap_p": 9.99990000099999e-06,
+  "different_distances": 90,
+  "raw_diff_ci": [
+    0.4316546762589928,
+    0.6115107913669064
+  ],
+  "sim_critical": 3.8002316245863974
+}
+split           model  log_loss  binary_brier  joint_brier
+ Date Hurdle additive  1.120967      0.168908     0.499005
+ Date Hurdle pairwise  1.114450      0.168908     0.498326
+ Date     Multinomial  1.147801      0.165434     0.500014
+expID Hurdle additive  1.121053      0.160142     0.493925
+expID Hurdle pairwise  1.115147      0.160142     0.493549
+expID     Multinomial  1.161497      0.157872     0.498060

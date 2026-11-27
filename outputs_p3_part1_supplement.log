@@ -1,0 +1,13 @@
+                                 Model  LogLoss                                                                                           Note
+Marginal state distribution (no-skill)   1.2870                                                           Global state frequencies from Data02
+             Majority state (no-skill)   0.4918 Degenerate baseline: zero probability for non-None states; not a usable probabilistic forecast
+           Hurdle pairwise (CV, expID)   1.1151                                                                   From P3_part1 validation.csv
+               Multinomial (CV, expID)   1.1615                                                                   From P3_part1 validation.csv
+
+split                        Comparison  N_pairs  Mean_logloss_diff  CI_Low  CI_High       t  p_value  p_holm
+ Date     Hurdle pairwise - Multinomial       12            -0.0312 -0.0582  -0.0042 -2.2687   0.0444  0.1332
+ Date Hurdle pairwise - Hurdle additive       12            -0.0087 -0.0226   0.0052 -1.2299   0.2444  0.4888
+ Date     Hurdle additive - Multinomial       12            -0.0225 -0.0617   0.0167 -1.1255   0.2843  0.4888
+expID     Hurdle pairwise - Multinomial       50            -0.0464 -0.0564  -0.0364 -9.0861   0.0000  0.0000
+expID Hurdle pairwise - Hurdle additive       50            -0.0059 -0.0094  -0.0023 -3.2569   0.0020  0.0020
+expID     Hurdle additive - Multinomial       50            -0.0406 -0.0521  -0.0290 -6.9066   0.0000  0.0000

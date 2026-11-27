@@ -1,0 +1,13 @@
+﻿Feature,Role,Evidence,P2_Use,P3_Use,Use_Status
+F01,First fundamental (carrier),date-robust,recommended: P2 carrier/absorption; P4 source level,not used directly (call type),recommended for interpretation/P4; not an input to the current P2/P3 models
+F02,Second fundamental (two-voice),definitional for tv; F02/F01~1.11; ~30 Hz beat,recommended: P2 two-voice robustness; P4 signature,recommended: call type tv,recommended for interpretation/P4; not an input to the current P2/P3 models
+Fpeak,Peak frequency,naive significant; regime-dependent,recommended: P2 spectrogram/amplitude-spectrum fidelity,not used directly,recommended for interpretation/P4; not an input to the current P2/P3 models
+Q25,25th-percentile frequency,not significant,recommended: P2 spectral envelope,not used,recommended for interpretation/P4; not an input to the current P2/P3 models
+Q50,Median frequency,date-driven,recommended: P2 spectral envelope,not used,recommended for interpretation/P4; not an input to the current P2/P3 models
+Q75,75th-percentile frequency,not significant,recommended: P2 spectral envelope,not used,recommended for interpretation/P4; not an input to the current P2/P3 models
+Duration,Call duration,not significant,recommended: P2 envelope correlation; P3 exposure,not used,recommended for interpretation/P4; not an input to the current P2/P3 models
+PulseRate,Pulse rate (mod/tv only),mod vs tv not significant,recommended: P2 envelope correlation; P3 latency,not used directly,recommended for interpretation/P4; not an input to the current P2/P3 models
+SpecBandwidth,Q75-Q25,redundant,recommended: P2 spectral fidelity,not used,recommended for interpretation/P4; not an input to the current P2/P3 models
+SpecSkew,Spectral skewness,not significant,recommended: P2 spectral shape,not used,recommended for interpretation/P4; not an input to the current P2/P3 models
+HarmonicRatio,Fpeak/F01,bimodal artifact; do not use as biology,not recommended,not recommended,recommended for interpretation/P4; not an input to the current P2/P3 models
+PeakAtFundamental,Fpeak/F01<1.5,regime indicator,recommended: P2 spectral peak interpretation,not used,recommended for interpretation/P4; not an input to the current P2/P3 models
