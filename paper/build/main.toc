@@ -1,0 +1,8 @@
+\contentsline {section}{\numberline {1}Research questions and experimental design}{3}{section.1}%
+\contentsline {section}{\numberline {2}Problem 1. Acoustic differences and classification}{3}{section.2}%
+\contentsline {section}{\numberline {3}Problem 2. Degradation and recognition range}{4}{section.3}%
+\contentsline {section}{\numberline {4}Problem 3. Playback behavior and latency}{4}{section.4}%
+\contentsline {section}{\numberline {5}Problem 4. Communication effectiveness and conservation}{5}{section.5}%
+\contentsline {section}{\numberline {6}Sensitivity, limitations and future experiments}{5}{section.6}%
+\contentsline {section}{\numberline {7}Conclusions}{5}{section.7}%
+\contentsline {section}{\numberline {A}Reproducibility}{5}{appendix.A}%

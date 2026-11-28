@@ -1,0 +1,133 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand*\HyPL@Entry[1]{}
+\HyPL@Entry{0<</S/D>>}
+\citation{problem}
+\citation{data}
+\HyPL@Entry{3<</S/D>>}
+\@writefile{toc}{\contentsline {section}{\numberline {1}问题背景}{1}{section*.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}问题分析}{1}{section*.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}模型假设与符号说明}{1}{section*.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}数据预处理}{2}{section*.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4\,.\,1}格式规范与物理合法性校验}{2}{subsection*.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4\,.\,2}缺失结构识别与处理原则}{2}{subsection*.6}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4-1}{\ignorespaces Data01 各类叫声的声学特征缺失条数}}{2}{table.caption.7}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{tab:prep_missing}{{4-1}{2}{Data01 各类叫声的声学特征缺失条数}{table.caption.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4\,.\,3}离群值识别与保留策略}{3}{subsection*.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4\,.\,4}特征构造与谐波阶次编码}{3}{subsection*.9}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4-2}{\ignorespaces 峰值频率的谐波阶次分布（$n=\operatorname  {round}(F_{\mathrm  {peak}}/F_{01})$）}}{4}{table.caption.16}\protected@file@percent }
+\newlabel{tab:prep_order}{{4-2}{4}{峰值频率的谐波阶次分布（$n=\operatorname {round}(F_{\mathrm {peak}}/F_{01})$）}{table.caption.16}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}问题一：海面叫声声学特征解析与分类建模}{4}{section*.17}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5\,.\,1}声学数据的特征诊断}{4}{subsection*.18}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces 三类海面叫声核心声学特征描述性统计（均值 $\pm $ 标准差 / 中位数）}}{4}{table.caption.19}\protected@file@percent }
+\newlabel{tab:p1_descriptive}{{1}{4}{三类海面叫声核心声学特征描述性统计（均值 $\pm $ 标准差 / 中位数）}{table.caption.19}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces 三类海面叫声 $8$ 项原始声学特征分布（标注框为结构性未定义特征）}}{5}{figure.caption.20}\protected@file@percent }
+\newlabel{fig:p1_raw}{{1}{5}{三类海面叫声 $8$ 项原始声学特征分布（标注框为结构性未定义特征）}{figure.caption.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces 衍生特征分布与 \texttt  {Fpeak}/\texttt  {F01} 双峰诊断}}{5}{figure.caption.21}\protected@file@percent }
+\newlabel{fig:p1_engineered}{{2}{5}{衍生特征分布与 \texttt {Fpeak}/\texttt {F01} 双峰诊断}{figure.caption.21}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces 声学特征的 Spearman 相关热图与方差膨胀因子（VIF）诊断}}{6}{figure.caption.22}\protected@file@percent }
+\newlabel{fig:p1_collinearity}{{3}{6}{声学特征的 Spearman 相关热图与方差膨胀因子（VIF）诊断}{figure.caption.22}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5\,.\,2}日期校正单变量非参数检验与 6D 多元空间检验}{6}{subsection*.23}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5\,.\,2\,.\,1}Kruskal--Wallis 与日期中心化分层置换检验}{6}{subsubsection*.24}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5\,.\,2\,.\,2}非冗余 6D 空间的 PERMANOVA 与 PERMDISP 检验}{6}{subsubsection*.26}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces 两两 Mann--Whitney 效应量森林图（左）与 6D 非冗余空间 PCA--PERMANOVA 双标图（右）}}{7}{figure.caption.28}\protected@file@percent }
+\newlabel{fig:p1_test}{{4}{7}{两两 Mann--Whitney 效应量森林图（左）与 6D 非冗余空间 PCA--PERMANOVA 双标图（右）}{figure.caption.28}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5\,.\,3}基于消融验证、两阶段分层分类器的分类建模}{7}{subsection*.29}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5\,.\,3\,.\,1}五组特征消融实验与目标泄露剥离}{7}{subsubsection*.30}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5\,.\,3\,.\,2}两阶段分层分类器的构建与求解}{8}{subsubsection*.33}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces 两阶段分层分类器与组合混淆矩阵（左）及 Set 3 随机森林置换特征重要性（右）}}{8}{figure.caption.36}\protected@file@percent }
+\newlabel{fig:p1_cls}{{5}{8}{两阶段分层分类器与组合混淆矩阵（左）及 Set 3 随机森林置换特征重要性（右）}{figure.caption.36}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5\,.\,3\,.\,3}主影响因子归因与特征排序}{8}{subsubsection*.37}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5\,.\,4}信息功能、传播稳健性评估与关键指标筛选}{9}{subsection*.39}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces 第一问关键声学指标筛选结果及后续建模与解释用途}}{10}{table.caption.42}\protected@file@percent }
+\newlabel{tab:p1_contract}{{2}{10}{第一问关键声学指标筛选结果及后续建模与解释用途}{table.caption.42}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}问题二：声信号传播衰减建模与有效通信距离评估}{11}{section*.43}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6\,.\,1}多指标融合与前置诊断}{11}{subsection*.44}\protected@file@percent }
+\newlabel{eq:p2_fusion}{{12}{11}{多指标融合与前置诊断}{equation*.45}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces 三类叫声各指标及 PCA 复合保真度衰减趋势（上）与试次级信息性缺失热图（下）}}{11}{figure.caption.46}\protected@file@percent }
+\newlabel{fig:p2_decay_miss}{{6}{11}{三类叫声各指标及 PCA 复合保真度衰减趋势（上）与试次级信息性缺失热图（下）}{figure.caption.46}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6\,.\,2}多模型衰减拟合、试次级交叉验证与模型平均}{12}{subsection*.47}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6\,.\,2\,.\,1}六类候选衰减模型构建}{12}{subsubsection*.48}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6\,.\,2\,.\,2}试次级交叉验证与合格模型筛选}{12}{subsubsection*.61}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces 六类信号传播衰减模型试次级 $5$ 折 CV-RMSE、$R^2$ 及模型平均权重对比}}{13}{table.caption.63}\protected@file@percent }
+\newlabel{tab:p2_models}{{3}{13}{六类信号传播衰减模型试次级 $5$ 折 CV-RMSE、$R^2$ 及模型平均权重对比}{table.caption.63}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6\,.\,2\,.\,3}稳健主模型确立与合格模型平均}{13}{subsubsection*.64}\protected@file@percent }
+\newlabel{eq:p2_model_average}{{20}{13}{稳健主模型确立与合格模型平均}{equation*.65}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces 三类叫声主保序模型、物理对数--指数模型与 GAM 样条拟合曲线对比}}{13}{figure.caption.66}\protected@file@percent }
+\newlabel{fig:p2_fit}{{7}{13}{三类叫声主保序模型、物理对数--指数模型与 GAM 样条拟合曲线对比}{figure.caption.66}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6\,.\,3}分级识别阈值设计与双视角有效通信距离估计}{13}{subsection*.67}\protected@file@percent }
+\newlabel{eq:p2_probability_range}{{21}{14}{分级识别阈值设计与双视角有效通信距离估计}{equation*.68}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces 三类叫声在潜在识别（$\tau =0.50$）与可靠识别（$\tau =0.70$）下的有效通信距离汇总（单位：$\text  {m}$）}}{14}{table.caption.69}\protected@file@percent }
+\newlabel{tab:p2_ranges}{{4}{14}{三类叫声在潜在识别（$\tau =0.50$）与可靠识别（$\tau =0.70$）下的有效通信距离汇总（单位：$\text {m}$）}{table.caption.69}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces 抽样自助法 CI 与模型离散区间对比（上）及共同试次个体识别概率曲线与经验区间（下）}}{15}{figure.caption.70}\protected@file@percent }
+\newlabel{fig:p2_range_prob}{{8}{15}{抽样自助法 CI 与模型离散区间对比（上）及共同试次个体识别概率曲线与经验区间（下）}{figure.caption.70}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6\,.\,4}多维敏感性分析、不确定性分解与远距离稳健性评判}{15}{subsection*.71}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6\,.\,4\,.\,1}阈值敏感性与 \texttt  {tv}--\texttt  {mod} 交叉点}{15}{subsubsection*.72}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces 识别阈值与有效距离的关系及 \texttt  {tv} 与 \texttt  {mod} 的交叉点}}{15}{figure.caption.73}\protected@file@percent }
+\newlabel{fig:p2_threshold_sens}{{9}{15}{识别阈值与有效距离的关系及 \texttt {tv} 与 \texttt {mod} 的交叉点}{figure.caption.73}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6\,.\,4\,.\,2}信息性缺失部分识别边界（MNAR Bounds）}{16}{subsubsection*.74}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces 最差与最优缺失情景下有效距离的部分识别边界}}{16}{figure.caption.75}\protected@file@percent }
+\newlabel{fig:p2_missing_bounds}{{10}{16}{最差与最优缺失情景下有效距离的部分识别边界}{figure.caption.75}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6\,.\,4\,.\,3}单通道短板与融合权重敏感性}{16}{subsubsection*.76}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces 不同识别阈值下各声学通道的有效距离}}{16}{figure.caption.77}\protected@file@percent }
+\newlabel{fig:p2_channel_ranges}{{11}{16}{不同识别阈值下各声学通道的有效距离}{figure.caption.77}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces 不同融合方法对有效距离估计的影响}}{17}{figure.caption.78}\protected@file@percent }
+\newlabel{fig:p2_fusion_sens}{{12}{17}{不同融合方法对有效距离估计的影响}{figure.caption.78}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6\,.\,4\,.\,4}龙卷风不确定性分解（$\tau = 0.70$）}{17}{subsubsection*.79}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces $\tau =0.70$ 下五类不确定性来源的区间宽度}}{17}{figure.caption.80}\protected@file@percent }
+\newlabel{fig:p2_tornado}{{13}{17}{$\tau =0.70$ 下五类不确定性来源的区间宽度}{figure.caption.80}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6\,.\,4\,.\,5}远距离传播稳健性综合结论}{18}{subsubsection*.81}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces 潜在识别与可靠识别标准下三类叫声的模型平均有效距离}}{18}{figure.caption.82}\protected@file@percent }
+\newlabel{fig:p2_robustness}{{14}{18}{潜在识别与可靠识别标准下三类叫声的模型平均有效距离}{figure.caption.82}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}问题三：海上回放实验行为响应与响应潜伏期建模}{19}{section*.83}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7\,.\,1}总体响应率对比与广义估计方程（GEE）协变量分析}{19}{subsection*.84}\protected@file@percent }
+\newlabel{eq:p3_gee}{{22}{19}{总体响应率对比与广义估计方程（GEE）协变量分析}{equation*.85}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces 总体行为响应的共同斜率 GEE 估计结果（按 \texttt  {expID} 聚类，稳健夹心标准误）}}{19}{table.caption.86}\protected@file@percent }
+\newlabel{tab:p3_gee}{{5}{19}{总体行为响应的共同斜率 GEE 估计结果（按 \texttt {expID} 聚类，稳健夹心标准误）}{table.caption.86}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7\,.\,2}八种行为组合的两阶段共现跨栏模型（Hurdle Pairwise）}{19}{subsection*.88}\protected@file@percent }
+\newlabel{eq:p3_perm}{{23}{19}{八种行为组合的两阶段共现跨栏模型（Hurdle Pairwise）}{equation*.89}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces 不同行为情境下自然叫声与对照响应率（上）及 GEE 预测响应概率随距离与群体规模变化（下）}}{20}{figure.caption.87}\protected@file@percent }
+\newlabel{fig:p3_env}{{15}{20}{不同行为情境下自然叫声与对照响应率（上）及 GEE 预测响应概率随距离与群体规模变化（下）}{figure.caption.87}{}}
+\newlabel{eq:p3_hurdle}{{24}{20}{八种行为组合的两阶段共现跨栏模型（Hurdle Pairwise）}{equation*.90}{}}
+\newlabel{eq:p3_utility}{{25}{20}{八种行为组合的两阶段共现跨栏模型（Hurdle Pairwise）}{equation*.91}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces 标准化后主要行为组合的概率差及同时 $95\%$ 置信区间（单位：百分点）}}{21}{table.caption.92}\protected@file@percent }
+\newlabel{tab:p3_contrasts}{{6}{21}{标准化后主要行为组合的概率差及同时 $95\%$ 置信区间（单位：百分点）}{table.caption.92}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces 四种回放条件下八种行为组合的标准化概率热图}}{21}{figure.caption.93}\protected@file@percent }
+\newlabel{fig:p3_states}{{16}{21}{四种回放条件下八种行为组合的标准化概率热图}{figure.caption.93}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7\,.\,3}响应潜伏期（零膨胀 AFT）与条件响应强度建模}{21}{subsection*.94}\protected@file@percent }
+\newlabel{eq:p3_aft}{{26}{21}{响应潜伏期（零膨胀 AFT）与条件响应强度建模}{equation*.95}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces 响应者各行为启动时间经验累积分布（左）及三类 AFT 模型在留出实验中的 MAE 对比（右）}}{22}{figure.caption.96}\protected@file@percent }
+\newlabel{fig:p3_timing}{{17}{22}{响应者各行为启动时间经验累积分布（左）及三类 AFT 模型在留出实验中的 MAE 对比（右）}{figure.caption.96}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7\,.\,4}代表性条件数值预测表与稳健性边界}{22}{subsection*.97}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces 代表性条件下（$\text  {Npenguins}=8$，情境标准化）各叫声类型中位响应潜伏期预测表（单位：$\text  {s}$，$[95\%\text  { CI}]$）}}{22}{table.caption.98}\protected@file@percent }
+\newlabel{tab:p3_pred}{{7}{22}{代表性条件下（$\text {Npenguins}=8$，情境标准化）各叫声类型中位响应潜伏期预测表（单位：$\text {s}$，$[95\%\text { CI}]$）}{table.caption.98}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}问题四：海上声学通信有效性评估、噪声情景分析与保护建议}{23}{section*.99}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8\,.\,1}阶段一：海上声学通信有效性综合指数与有效通信半径}{23}{subsection*.100}\protected@file@percent }
+\newlabel{eq:p4_index}{{27}{23}{阶段一：海上声学通信有效性综合指数与有效通信半径}{equation*.101}{}}
+\newlabel{eq:p4_score}{{28}{23}{阶段一：海上声学通信有效性综合指数与有效通信半径}{equation*.102}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces 典型 $8$ 只群体在 $15$ 分主标准下的有效通信半径（单位：$\text  {m}$）及权重敏感性对比}}{23}{table.caption.103}\protected@file@percent }
+\newlabel{tab:p4_radii}{{8}{23}{典型 $8$ 只群体在 $15$ 分主标准下的有效通信半径（单位：$\text {m}$）及权重敏感性对比}{table.caption.103}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces 信号保真度、行为净增益与综合有效性指数曲线（上）及阈值敏感性与各情境有效半径（下）}}{24}{figure.caption.104}\protected@file@percent }
+\newlabel{fig:p4_index}{{18}{24}{信号保真度、行为净增益与综合有效性指数曲线（上）及阈值敏感性与各情境有效半径（下）}{figure.caption.104}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8\,.\,2}阶段二：单次回放期望响应个体数与群体规模敏感性}{24}{subsection*.105}\protected@file@percent }
+\newlabel{eq:p4_birds}{{29}{24}{阶段二：单次回放期望响应个体数与群体规模敏感性}{equation*.106}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8\,.\,3}阶段三：环境噪声与恶劣海况的 $3 \times 5$ 全因子压力测试}{24}{subsection*.108}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces 典型 $8$ 只群体在 $50, 100, 150\text  { m}$ 处期望响应个体数随群体内参与比例 $\rho $ 的敏感性变化}}{25}{figure.caption.107}\protected@file@percent }
+\newlabel{fig:p4_part}{{19}{25}{典型 $8$ 只群体在 $50, 100, 150\text { m}$ 处期望响应个体数随群体内参与比例 $\rho $ 的敏感性变化}{figure.caption.107}{}}
+\newlabel{eq:p4_stress}{{30}{25}{阶段三：环境噪声与恶劣海况的 $3 \times 5$ 全因子压力测试}{equation*.109}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8\,.\,4}阶段四：未来回放实验改进与栖息地声学保护建议}{25}{subsection*.115}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces 代表性噪声与海况恶化情景下的通信半径、面积损失及 $100\text  { m}$ 群体响应概率（主设定 $\eta =0.5$）}}{26}{table.caption.113}\protected@file@percent }
+\newlabel{tab:p4_stress}{{9}{26}{代表性噪声与海况恶化情景下的通信半径、面积损失及 $100\text { m}$ 群体响应概率（主设定 $\eta =0.5$）}{table.caption.113}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces $15$ 个压力情景下的 $15$ 分综合通信半径热图（上）及未识别参数 $\eta \in [0,1]$ 下的通信半径带（下）}}{26}{figure.caption.114}\protected@file@percent }
+\newlabel{fig:p4_stress}{{20}{26}{$15$ 个压力情景下的 $15$ 分综合通信半径热图（上）及未识别参数 $\eta \in [0,1]$ 下的通信半径带（下）}{figure.caption.114}{}}
+\bibcite{problem}{1}
+\bibcite{data}{2}
+\@writefile{toc}{\contentsline {section}{\numberline {9}模型评价与改进}{28}{section*.122}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{参考文献}{28}{section*.123}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{附录：支撑材料}{28}{section*.124}\protected@file@percent }
+\ttl@finishall
+\newlabel{LastPage}{{9}{28}{}{page.31}{}}
+\gdef\lastpage@lastpage{28}
+\gdef\lastpage@lastpageHy{31}
+\gdef \@abspage@last{31}
