@@ -1,0 +1,4 @@
+﻿call,reference_threshold,reference_loss,target_radius_m,equivalent_loss_pct,note
+flat,0.7,0.0,40.00243200992359,16.768509154056126,interpolated
+mod,0.7,0.0,94.00902254014699,15.335433381219248,interpolated
+tv,0.7,0.0,87.68309689694394,,>20%
